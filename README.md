@@ -1,2 +1,2 @@
 # self-learning-AI
-<h3>Teaching myself AI and document the process</h3>
+<h2>Teaching myself AI and documenting the process</h2>
