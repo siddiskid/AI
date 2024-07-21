@@ -18,7 +18,7 @@ class AdalineGD:
     b_: scalar
         bias of the perceptron after fitting
     losses_: list
-        number of errors in each epoch during fitting
+        losses in each epoch during fitting
 
     """
 
@@ -50,8 +50,8 @@ class AdalineGD:
             out = self.activation(net_i)
             errors = y - out
             self.w_ += 2 * self.eta * X.T.dot(errors) / X.shape[0]
-            self.b_ += 2 * self.eta * sum(errors) / X.shape[0]
-            self.losses_.append(sum(errors ** 2)/X.shape[0])
+            self.b_ += 2 * self.eta * errors.mean()
+            self.losses_.append((errors ** 2).mean())
 
         return self
         
@@ -65,5 +65,5 @@ class AdalineGD:
     
     def predict(self, X):
         """Return an array of predicted classes"""
-        return np.where(self.activation(self.net_input(X)) >= 0.0, 1, 0)
+        return np.where(self.activation(self.net_input(X)) >= 0.5, 1, 0)
 
