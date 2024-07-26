@@ -2,7 +2,7 @@ import numpy as np
 
 class AdalineGD:
     """
-    ADAptive LInear NEuron Classifier
+    ADAptive LInear NEuron Classifier that learns using Full Batch Gradient Descent
 
     Params:
     eta: float
@@ -40,9 +40,7 @@ class AdalineGD:
         Returns:
         self
         """
-        rgen = np.random.RandomState(self.random_state)
-        self.w_ = rgen.normal(0.0, 0.01, X.shape[1])
-        self.b_ = 0.0
+        self.initialize_weights(X.shape[1])
         self.losses_ = []
 
         for _ in range(self.n_iter):
@@ -54,6 +52,12 @@ class AdalineGD:
             self.losses_.append((errors ** 2).mean())
 
         return self
+    
+    def initialize_weights(self, size):
+        """Initialize weights and bias to small, random numbers"""
+        rgen = np.random.RandomState(self.random_state)
+        self.w_ = rgen.normal(0.0, 0.01, size)
+        self.b_ = 0.0
         
     def net_input(self, X):
         """Returns an array of the net inputs for each input in X (weights * inputs + bias)"""
