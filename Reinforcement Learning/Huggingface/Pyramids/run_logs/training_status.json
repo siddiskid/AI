@@ -1,0 +1,65 @@
+{
+    "Pyramids": {
+        "checkpoints": [
+            {
+                "steps": 1999888,
+                "file_path": "results/Pyramids Training/Pyramids/Pyramids-1999888.onnx",
+                "reward": 1.8024999722838402,
+                "creation_time": 1753093375.148163,
+                "auxillary_file_paths": [
+                    "results/Pyramids Training/Pyramids/Pyramids-1999888.pt"
+                ]
+            },
+            {
+                "steps": 2000016,
+                "file_path": "results/Pyramids Training/Pyramids/Pyramids-2000016.onnx",
+                "reward": 1.8024999722838402,
+                "creation_time": 1753093375.2740035,
+                "auxillary_file_paths": [
+                    "results/Pyramids Training/Pyramids/Pyramids-2000016.pt"
+                ]
+            },
+            {
+                "steps": 2499906,
+                "file_path": "results/Pyramids Training/Pyramids/Pyramids-2499906.onnx",
+                "reward": 1.7261666506528854,
+                "creation_time": 1753094775.0340555,
+                "auxillary_file_paths": [
+                    "results/Pyramids Training/Pyramids/Pyramids-2499906.pt"
+                ]
+            },
+            {
+                "steps": 2999912,
+                "file_path": "results/Pyramids Training/Pyramids/Pyramids-2999912.onnx",
+                "reward": 1.7890999972820283,
+                "creation_time": 1753096027.3562975,
+                "auxillary_file_paths": [
+                    "results/Pyramids Training/Pyramids/Pyramids-2999912.pt"
+                ]
+            },
+            {
+                "steps": 3000040,
+                "file_path": "results/Pyramids Training/Pyramids/Pyramids-3000040.onnx",
+                "reward": 1.7890999972820283,
+                "creation_time": 1753096027.4496286,
+                "auxillary_file_paths": [
+                    "results/Pyramids Training/Pyramids/Pyramids-3000040.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3000040,
+            "file_path": "results/Pyramids Training/Pyramids.onnx",
+            "reward": 1.7890999972820283,
+            "creation_time": 1753096027.4496286,
+            "auxillary_file_paths": [
+                "results/Pyramids Training/Pyramids/Pyramids-3000040.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.7.1+cu126"
+    }
+}

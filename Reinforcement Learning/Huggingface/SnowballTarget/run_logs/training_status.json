@@ -1,0 +1,65 @@
+{
+    "SnowballTarget": {
+        "checkpoints": [
+            {
+                "steps": 49936,
+                "file_path": "results/SnowballTarget1/SnowballTarget/SnowballTarget-49936.onnx",
+                "reward": 15.636363636363637,
+                "creation_time": 1753081979.7214127,
+                "auxillary_file_paths": [
+                    "results/SnowballTarget1/SnowballTarget/SnowballTarget-49936.pt"
+                ]
+            },
+            {
+                "steps": 99960,
+                "file_path": "results/SnowballTarget1/SnowballTarget/SnowballTarget-99960.onnx",
+                "reward": 23.90909090909091,
+                "creation_time": 1753082084.0636742,
+                "auxillary_file_paths": [
+                    "results/SnowballTarget1/SnowballTarget/SnowballTarget-99960.pt"
+                ]
+            },
+            {
+                "steps": 149984,
+                "file_path": "results/SnowballTarget1/SnowballTarget/SnowballTarget-149984.onnx",
+                "reward": 26.454545454545453,
+                "creation_time": 1753082187.173939,
+                "auxillary_file_paths": [
+                    "results/SnowballTarget1/SnowballTarget/SnowballTarget-149984.pt"
+                ]
+            },
+            {
+                "steps": 199984,
+                "file_path": "results/SnowballTarget1/SnowballTarget/SnowballTarget-199984.onnx",
+                "reward": 24.90909090909091,
+                "creation_time": 1753082288.8415165,
+                "auxillary_file_paths": [
+                    "results/SnowballTarget1/SnowballTarget/SnowballTarget-199984.pt"
+                ]
+            },
+            {
+                "steps": 200112,
+                "file_path": "results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.onnx",
+                "reward": 24.90909090909091,
+                "creation_time": 1753082288.9344113,
+                "auxillary_file_paths": [
+                    "results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 200112,
+            "file_path": "results/SnowballTarget1/SnowballTarget.onnx",
+            "reward": 24.90909090909091,
+            "creation_time": 1753082288.9344113,
+            "auxillary_file_paths": [
+                "results/SnowballTarget1/SnowballTarget/SnowballTarget-200112.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.2.0.dev0",
+        "torch_version": "2.7.1+cu126"
+    }
+}

@@ -1,0 +1,1444 @@
+[2025-07-24 23:45:04,911][03152] Saving configuration to /content/train_dir/default_experiment/config.json...
+[2025-07-24 23:45:04,915][03152] Rollout worker 0 uses device cpu
+[2025-07-24 23:45:04,916][03152] Rollout worker 1 uses device cpu
+[2025-07-24 23:45:04,917][03152] Rollout worker 2 uses device cpu
+[2025-07-24 23:45:04,918][03152] Rollout worker 3 uses device cpu
+[2025-07-24 23:45:04,918][03152] Rollout worker 4 uses device cpu
+[2025-07-24 23:45:04,919][03152] Rollout worker 5 uses device cpu
+[2025-07-24 23:45:04,920][03152] Rollout worker 6 uses device cpu
+[2025-07-24 23:45:04,921][03152] Rollout worker 7 uses device cpu
+[2025-07-24 23:45:05,069][03152] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2025-07-24 23:45:05,070][03152] InferenceWorker_p0-w0: min num requests: 2
+[2025-07-24 23:45:05,099][03152] Starting all processes...
+[2025-07-24 23:45:05,099][03152] Starting process learner_proc0
+[2025-07-24 23:45:05,163][03152] Starting all processes...
+[2025-07-24 23:45:05,171][03152] Starting process inference_proc0-0
+[2025-07-24 23:45:05,172][03152] Starting process rollout_proc0
+[2025-07-24 23:45:05,173][03152] Starting process rollout_proc1
+[2025-07-24 23:45:05,173][03152] Starting process rollout_proc2
+[2025-07-24 23:45:05,173][03152] Starting process rollout_proc3
+[2025-07-24 23:45:05,173][03152] Starting process rollout_proc4
+[2025-07-24 23:45:05,173][03152] Starting process rollout_proc5
+[2025-07-24 23:45:05,174][03152] Starting process rollout_proc6
+[2025-07-24 23:45:05,178][03152] Starting process rollout_proc7
+[2025-07-24 23:45:21,127][05117] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2025-07-24 23:45:21,132][05117] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for learning process 0
+[2025-07-24 23:45:21,212][05117] Num visible devices: 1
+[2025-07-24 23:45:21,236][05117] Starting seed is not provided
+[2025-07-24 23:45:21,237][05117] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2025-07-24 23:45:21,238][05117] Initializing actor-critic model on device cuda:0
+[2025-07-24 23:45:21,239][05117] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-24 23:45:21,243][05117] RunningMeanStd input shape: (1,)
+[2025-07-24 23:45:21,322][05117] ConvEncoder: input_channels=3
+[2025-07-24 23:45:21,706][05131] Worker 0 uses CPU cores [0]
+[2025-07-24 23:45:21,768][05135] Worker 3 uses CPU cores [1]
+[2025-07-24 23:45:21,957][05136] Worker 5 uses CPU cores [1]
+[2025-07-24 23:45:22,140][05133] Worker 7 uses CPU cores [1]
+[2025-07-24 23:45:22,149][05137] Worker 6 uses CPU cores [0]
+[2025-07-24 23:45:22,192][05117] Conv encoder output size: 512
+[2025-07-24 23:45:22,193][05117] Policy head output size: 512
+[2025-07-24 23:45:22,228][05138] Worker 4 uses CPU cores [0]
+[2025-07-24 23:45:22,282][05132] Worker 2 uses CPU cores [0]
+[2025-07-24 23:45:22,285][05117] Created Actor Critic model with architecture:
+[2025-07-24 23:45:22,286][05117] ActorCriticSharedWeights(
+  (obs_normalizer): ObservationNormalizer(
+    (running_mean_std): RunningMeanStdDictInPlace(
+      (running_mean_std): ModuleDict(
+        (obs): RunningMeanStdInPlace()
+      )
+    )
+  )
+  (returns_normalizer): RecursiveScriptModule(original_name=RunningMeanStdInPlace)
+  (encoder): VizdoomEncoder(
+    (basic_encoder): ConvEncoder(
+      (enc): RecursiveScriptModule(
+        original_name=ConvEncoderImpl
+        (conv_head): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(original_name=Conv2d)
+          (1): RecursiveScriptModule(original_name=ELU)
+          (2): RecursiveScriptModule(original_name=Conv2d)
+          (3): RecursiveScriptModule(original_name=ELU)
+          (4): RecursiveScriptModule(original_name=Conv2d)
+          (5): RecursiveScriptModule(original_name=ELU)
+        )
+        (mlp_layers): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(original_name=Linear)
+          (1): RecursiveScriptModule(original_name=ELU)
+        )
+      )
+    )
+  )
+  (core): ModelCoreRNN(
+    (core): GRU(512, 512)
+  )
+  (decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_linear): Linear(in_features=512, out_features=1, bias=True)
+  (action_parameterization): ActionParameterizationDefault(
+    (distribution_linear): Linear(in_features=512, out_features=5, bias=True)
+  )
+)
+[2025-07-24 23:45:22,316][05134] Worker 1 uses CPU cores [1]
+[2025-07-24 23:45:22,317][05130] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2025-07-24 23:45:22,317][05130] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for inference process 0
+[2025-07-24 23:45:22,341][05130] Num visible devices: 1
+[2025-07-24 23:45:22,635][05117] Using optimizer <class 'torch.optim.adam.Adam'>
+[2025-07-24 23:45:25,062][03152] Heartbeat connected on Batcher_0
+[2025-07-24 23:45:25,069][03152] Heartbeat connected on InferenceWorker_p0-w0
+[2025-07-24 23:45:25,076][03152] Heartbeat connected on RolloutWorker_w0
+[2025-07-24 23:45:25,079][03152] Heartbeat connected on RolloutWorker_w1
+[2025-07-24 23:45:25,086][03152] Heartbeat connected on RolloutWorker_w2
+[2025-07-24 23:45:25,089][03152] Heartbeat connected on RolloutWorker_w4
+[2025-07-24 23:45:25,092][03152] Heartbeat connected on RolloutWorker_w3
+[2025-07-24 23:45:25,094][03152] Heartbeat connected on RolloutWorker_w5
+[2025-07-24 23:45:25,096][03152] Heartbeat connected on RolloutWorker_w6
+[2025-07-24 23:45:25,107][03152] Heartbeat connected on RolloutWorker_w7
+[2025-07-24 23:45:27,788][05117] No checkpoints found
+[2025-07-24 23:45:27,788][05117] Did not load from checkpoint, starting from scratch!
+[2025-07-24 23:45:27,788][05117] Initialized policy 0 weights for model version 0
+[2025-07-24 23:45:27,791][05117] LearnerWorker_p0 finished initialization!
+[2025-07-24 23:45:27,792][03152] Heartbeat connected on LearnerWorker_p0
+[2025-07-24 23:45:27,794][05117] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2025-07-24 23:45:28,052][05130] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-24 23:45:28,054][05130] RunningMeanStd input shape: (1,)
+[2025-07-24 23:45:28,068][05130] ConvEncoder: input_channels=3
+[2025-07-24 23:45:28,175][05130] Conv encoder output size: 512
+[2025-07-24 23:45:28,176][05130] Policy head output size: 512
+[2025-07-24 23:45:28,211][03152] Inference worker 0-0 is ready!
+[2025-07-24 23:45:28,212][03152] All inference workers are ready! Signal rollout workers to start!
+[2025-07-24 23:45:28,442][05136] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,466][05132] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,473][05134] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,481][05133] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,486][05138] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,510][05137] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,543][05131] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:28,538][05135] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-24 23:45:29,205][03152] Fps is (10 sec: nan, 60 sec: nan, 300 sec: nan). Total num frames: 0. Throughput: 0: nan. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2025-07-24 23:45:29,860][05135] Decorrelating experience for 0 frames...
+[2025-07-24 23:45:29,861][05136] Decorrelating experience for 0 frames...
+[2025-07-24 23:45:30,369][05136] Decorrelating experience for 32 frames...
+[2025-07-24 23:45:30,371][05135] Decorrelating experience for 32 frames...
+[2025-07-24 23:45:30,991][05135] Decorrelating experience for 64 frames...
+[2025-07-24 23:45:30,997][05136] Decorrelating experience for 64 frames...
+[2025-07-24 23:45:31,298][05135] Decorrelating experience for 96 frames...
+[2025-07-24 23:45:31,655][05136] Decorrelating experience for 96 frames...
+[2025-07-24 23:45:34,205][03152] Fps is (10 sec: 0.0, 60 sec: 0.0, 300 sec: 0.0). Total num frames: 0. Throughput: 0: 0.0. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2025-07-24 23:45:34,209][03152] Avg episode reward: [(0, '3.379')]
+[2025-07-24 23:45:35,305][05117] Signal inference workers to stop experience collection...
+[2025-07-24 23:45:35,315][05130] InferenceWorker_p0-w0: stopping experience collection
+[2025-07-24 23:45:36,420][05117] Signal inference workers to resume experience collection...
+[2025-07-24 23:45:36,422][05130] InferenceWorker_p0-w0: resuming experience collection
+[2025-07-24 23:45:39,205][03152] Fps is (10 sec: 1228.8, 60 sec: 1228.8, 300 sec: 1228.8). Total num frames: 12288. Throughput: 0: 236.0. Samples: 2360. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2025-07-24 23:45:39,209][03152] Avg episode reward: [(0, '4.052')]
+[2025-07-24 23:45:44,205][03152] Fps is (10 sec: 2457.6, 60 sec: 1638.4, 300 sec: 1638.4). Total num frames: 24576. Throughput: 0: 412.8. Samples: 6192. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:45:44,211][03152] Avg episode reward: [(0, '4.238')]
+[2025-07-24 23:45:47,648][05130] Updated weights for policy 0, policy_version 10 (0.0146)
+[2025-07-24 23:45:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2252.8, 300 sec: 2252.8). Total num frames: 45056. Throughput: 0: 451.3. Samples: 9026. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:45:49,207][03152] Avg episode reward: [(0, '4.402')]
+[2025-07-24 23:45:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2293.8, 300 sec: 2293.8). Total num frames: 57344. Throughput: 0: 542.1. Samples: 13552. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:45:54,209][03152] Avg episode reward: [(0, '4.399')]
+[2025-07-24 23:45:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2594.1, 300 sec: 2594.1). Total num frames: 77824. Throughput: 0: 638.8. Samples: 19164. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:45:59,209][03152] Avg episode reward: [(0, '4.399')]
+[2025-07-24 23:45:59,703][05130] Updated weights for policy 0, policy_version 20 (0.0013)
+[2025-07-24 23:46:04,206][03152] Fps is (10 sec: 3276.7, 60 sec: 2574.6, 300 sec: 2574.6). Total num frames: 90112. Throughput: 0: 623.5. Samples: 21824. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:46:04,207][03152] Avg episode reward: [(0, '4.390')]
+[2025-07-24 23:46:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2764.8, 300 sec: 2764.8). Total num frames: 110592. Throughput: 0: 658.4. Samples: 26336. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:46:09,207][03152] Avg episode reward: [(0, '4.539')]
+[2025-07-24 23:46:09,213][05117] Saving new best policy, reward=4.539!
+[2025-07-24 23:46:12,134][05130] Updated weights for policy 0, policy_version 30 (0.0014)
+[2025-07-24 23:46:14,205][03152] Fps is (10 sec: 3686.5, 60 sec: 2821.7, 300 sec: 2821.7). Total num frames: 126976. Throughput: 0: 706.7. Samples: 31802. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:14,207][03152] Avg episode reward: [(0, '4.440')]
+[2025-07-24 23:46:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2867.2, 300 sec: 2867.2). Total num frames: 143360. Throughput: 0: 752.4. Samples: 33858. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:19,209][03152] Avg episode reward: [(0, '4.462')]
+[2025-07-24 23:46:24,207][03152] Fps is (10 sec: 3276.3, 60 sec: 2904.4, 300 sec: 2904.4). Total num frames: 159744. Throughput: 0: 817.2. Samples: 39134. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:24,209][03152] Avg episode reward: [(0, '4.571')]
+[2025-07-24 23:46:24,249][05117] Saving new best policy, reward=4.571!
+[2025-07-24 23:46:24,255][05130] Updated weights for policy 0, policy_version 40 (0.0013)
+[2025-07-24 23:46:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 2935.5, 300 sec: 2935.5). Total num frames: 176128. Throughput: 0: 844.2. Samples: 44182. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:29,207][03152] Avg episode reward: [(0, '4.382')]
+[2025-07-24 23:46:34,205][03152] Fps is (10 sec: 3277.3, 60 sec: 3208.5, 300 sec: 2961.7). Total num frames: 192512. Throughput: 0: 827.8. Samples: 46276. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:34,209][03152] Avg episode reward: [(0, '4.370')]
+[2025-07-24 23:46:36,628][05130] Updated weights for policy 0, policy_version 50 (0.0013)
+[2025-07-24 23:46:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3042.7). Total num frames: 212992. Throughput: 0: 851.1. Samples: 51852. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:39,209][03152] Avg episode reward: [(0, '4.353')]
+[2025-07-24 23:46:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3003.7). Total num frames: 225280. Throughput: 0: 827.5. Samples: 56400. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:44,209][03152] Avg episode reward: [(0, '4.389')]
+[2025-07-24 23:46:48,804][05130] Updated weights for policy 0, policy_version 60 (0.0016)
+[2025-07-24 23:46:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3072.0). Total num frames: 245760. Throughput: 0: 830.0. Samples: 59172. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:49,209][03152] Avg episode reward: [(0, '4.331')]
+[2025-07-24 23:46:54,207][03152] Fps is (10 sec: 3685.7, 60 sec: 3413.2, 300 sec: 3084.0). Total num frames: 262144. Throughput: 0: 852.7. Samples: 64708. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:54,209][03152] Avg episode reward: [(0, '4.328')]
+[2025-07-24 23:46:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3094.8). Total num frames: 278528. Throughput: 0: 832.4. Samples: 69262. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:46:59,207][03152] Avg episode reward: [(0, '4.428')]
+[2025-07-24 23:46:59,213][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000068_278528.pth...
+[2025-07-24 23:47:01,099][05130] Updated weights for policy 0, policy_version 70 (0.0012)
+[2025-07-24 23:47:04,207][03152] Fps is (10 sec: 3277.1, 60 sec: 3413.3, 300 sec: 3104.3). Total num frames: 294912. Throughput: 0: 845.7. Samples: 71914. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:04,208][03152] Avg episode reward: [(0, '4.283')]
+[2025-07-24 23:47:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3113.0). Total num frames: 311296. Throughput: 0: 833.3. Samples: 76632. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:09,207][03152] Avg episode reward: [(0, '4.215')]
+[2025-07-24 23:47:13,401][05130] Updated weights for policy 0, policy_version 80 (0.0013)
+[2025-07-24 23:47:14,205][03152] Fps is (10 sec: 3277.1, 60 sec: 3345.1, 300 sec: 3120.8). Total num frames: 327680. Throughput: 0: 838.3. Samples: 81906. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:14,208][03152] Avg episode reward: [(0, '4.415')]
+[2025-07-24 23:47:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3127.9). Total num frames: 344064. Throughput: 0: 853.6. Samples: 84690. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:19,207][03152] Avg episode reward: [(0, '4.375')]
+[2025-07-24 23:47:24,207][03152] Fps is (10 sec: 3276.3, 60 sec: 3345.1, 300 sec: 3134.3). Total num frames: 360448. Throughput: 0: 830.1. Samples: 89206. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:24,209][03152] Avg episode reward: [(0, '4.506')]
+[2025-07-24 23:47:25,582][05130] Updated weights for policy 0, policy_version 90 (0.0015)
+[2025-07-24 23:47:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3174.4). Total num frames: 380928. Throughput: 0: 852.9. Samples: 94780. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:29,207][03152] Avg episode reward: [(0, '4.517')]
+[2025-07-24 23:47:34,205][03152] Fps is (10 sec: 3277.4, 60 sec: 3345.1, 300 sec: 3145.7). Total num frames: 393216. Throughput: 0: 848.5. Samples: 97356. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:34,210][03152] Avg episode reward: [(0, '4.412')]
+[2025-07-24 23:47:37,742][05130] Updated weights for policy 0, policy_version 100 (0.0013)
+[2025-07-24 23:47:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3182.3). Total num frames: 413696. Throughput: 0: 829.2. Samples: 102022. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:39,210][03152] Avg episode reward: [(0, '4.184')]
+[2025-07-24 23:47:44,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3185.8). Total num frames: 430080. Throughput: 0: 852.0. Samples: 107602. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:44,207][03152] Avg episode reward: [(0, '4.251')]
+[2025-07-24 23:47:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3189.0). Total num frames: 446464. Throughput: 0: 833.4. Samples: 109414. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:49,207][03152] Avg episode reward: [(0, '4.378')]
+[2025-07-24 23:47:49,900][05130] Updated weights for policy 0, policy_version 110 (0.0013)
+[2025-07-24 23:47:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.2, 300 sec: 3192.1). Total num frames: 462848. Throughput: 0: 850.4. Samples: 114902. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:54,209][03152] Avg episode reward: [(0, '4.363')]
+[2025-07-24 23:47:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3194.9). Total num frames: 479232. Throughput: 0: 839.9. Samples: 119702. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:47:59,210][03152] Avg episode reward: [(0, '4.538')]
+[2025-07-24 23:48:03,207][05130] Updated weights for policy 0, policy_version 120 (0.0013)
+[2025-07-24 23:48:04,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.9, 300 sec: 3171.1). Total num frames: 491520. Throughput: 0: 826.8. Samples: 121894. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:48:04,207][03152] Avg episode reward: [(0, '4.374')]
+[2025-07-24 23:48:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3200.0). Total num frames: 512000. Throughput: 0: 832.8. Samples: 126680. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:09,207][03152] Avg episode reward: [(0, '4.451')]
+[2025-07-24 23:48:14,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3202.3). Total num frames: 528384. Throughput: 0: 810.7. Samples: 131260. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:14,209][03152] Avg episode reward: [(0, '4.500')]
+[2025-07-24 23:48:15,265][05130] Updated weights for policy 0, policy_version 130 (0.0013)
+[2025-07-24 23:48:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3204.5). Total num frames: 544768. Throughput: 0: 816.4. Samples: 134092. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:19,210][03152] Avg episode reward: [(0, '4.349')]
+[2025-07-24 23:48:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.2, 300 sec: 3206.6). Total num frames: 561152. Throughput: 0: 829.4. Samples: 139346. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:24,210][03152] Avg episode reward: [(0, '4.268')]
+[2025-07-24 23:48:27,378][05130] Updated weights for policy 0, policy_version 140 (0.0014)
+[2025-07-24 23:48:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3208.5). Total num frames: 577536. Throughput: 0: 814.1. Samples: 144238. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:29,210][03152] Avg episode reward: [(0, '4.281')]
+[2025-07-24 23:48:34,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3232.5). Total num frames: 598016. Throughput: 0: 836.3. Samples: 147046. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:34,207][03152] Avg episode reward: [(0, '4.368')]
+[2025-07-24 23:48:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3212.1). Total num frames: 610304. Throughput: 0: 815.2. Samples: 151586. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:39,209][03152] Avg episode reward: [(0, '4.503')]
+[2025-07-24 23:48:39,450][05130] Updated weights for policy 0, policy_version 150 (0.0013)
+[2025-07-24 23:48:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3234.8). Total num frames: 630784. Throughput: 0: 832.8. Samples: 157176. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:44,210][03152] Avg episode reward: [(0, '4.546')]
+[2025-07-24 23:48:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3235.8). Total num frames: 647168. Throughput: 0: 845.7. Samples: 159952. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:48:49,207][03152] Avg episode reward: [(0, '4.528')]
+[2025-07-24 23:48:51,513][05130] Updated weights for policy 0, policy_version 160 (0.0013)
+[2025-07-24 23:48:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3236.8). Total num frames: 663552. Throughput: 0: 842.4. Samples: 164588. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:54,210][03152] Avg episode reward: [(0, '4.534')]
+[2025-07-24 23:48:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3237.8). Total num frames: 679936. Throughput: 0: 863.2. Samples: 170106. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:48:59,210][03152] Avg episode reward: [(0, '4.502')]
+[2025-07-24 23:48:59,241][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000167_684032.pth...
+[2025-07-24 23:49:03,765][05130] Updated weights for policy 0, policy_version 170 (0.0012)
+[2025-07-24 23:49:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3238.7). Total num frames: 696320. Throughput: 0: 848.0. Samples: 172254. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:04,210][03152] Avg episode reward: [(0, '4.464')]
+[2025-07-24 23:49:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3239.6). Total num frames: 712704. Throughput: 0: 844.4. Samples: 177342. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:09,210][03152] Avg episode reward: [(0, '4.453')]
+[2025-07-24 23:49:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3240.4). Total num frames: 729088. Throughput: 0: 852.4. Samples: 182598. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:14,207][03152] Avg episode reward: [(0, '4.699')]
+[2025-07-24 23:49:14,209][05117] Saving new best policy, reward=4.699!
+[2025-07-24 23:49:15,928][05130] Updated weights for policy 0, policy_version 180 (0.0015)
+[2025-07-24 23:49:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3241.2). Total num frames: 745472. Throughput: 0: 835.6. Samples: 184646. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:19,210][03152] Avg episode reward: [(0, '4.627')]
+[2025-07-24 23:49:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3259.4). Total num frames: 765952. Throughput: 0: 858.0. Samples: 190198. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:49:24,210][03152] Avg episode reward: [(0, '4.445')]
+[2025-07-24 23:49:28,074][05130] Updated weights for policy 0, policy_version 190 (0.0012)
+[2025-07-24 23:49:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3259.7). Total num frames: 782336. Throughput: 0: 835.1. Samples: 194754. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:29,210][03152] Avg episode reward: [(0, '4.326')]
+[2025-07-24 23:49:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3260.1). Total num frames: 798720. Throughput: 0: 835.3. Samples: 197542. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:49:34,210][03152] Avg episode reward: [(0, '4.364')]
+[2025-07-24 23:49:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3260.4). Total num frames: 815104. Throughput: 0: 853.2. Samples: 202984. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:39,207][03152] Avg episode reward: [(0, '4.615')]
+[2025-07-24 23:49:40,191][05130] Updated weights for policy 0, policy_version 200 (0.0014)
+[2025-07-24 23:49:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3260.7). Total num frames: 831488. Throughput: 0: 832.8. Samples: 207584. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:49:44,210][03152] Avg episode reward: [(0, '4.605')]
+[2025-07-24 23:49:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3276.8). Total num frames: 851968. Throughput: 0: 846.8. Samples: 210360. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:49:49,210][03152] Avg episode reward: [(0, '4.451')]
+[2025-07-24 23:49:51,798][05130] Updated weights for policy 0, policy_version 210 (0.0013)
+[2025-07-24 23:49:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3261.3). Total num frames: 864256. Throughput: 0: 843.6. Samples: 215306. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:54,210][03152] Avg episode reward: [(0, '4.599')]
+[2025-07-24 23:49:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3276.8). Total num frames: 884736. Throughput: 0: 844.5. Samples: 220602. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:49:59,210][03152] Avg episode reward: [(0, '4.700')]
+[2025-07-24 23:49:59,217][05117] Saving new best policy, reward=4.700!
+[2025-07-24 23:50:03,707][05130] Updated weights for policy 0, policy_version 220 (0.0013)
+[2025-07-24 23:50:04,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3276.8). Total num frames: 901120. Throughput: 0: 860.1. Samples: 223352. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:04,207][03152] Avg episode reward: [(0, '4.593')]
+[2025-07-24 23:50:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3276.8). Total num frames: 917504. Throughput: 0: 835.7. Samples: 227804. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:09,209][03152] Avg episode reward: [(0, '4.513')]
+[2025-07-24 23:50:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3276.8). Total num frames: 933888. Throughput: 0: 857.8. Samples: 233354. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:14,207][03152] Avg episode reward: [(0, '4.410')]
+[2025-07-24 23:50:17,278][05130] Updated weights for policy 0, policy_version 230 (0.0013)
+[2025-07-24 23:50:19,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3345.1, 300 sec: 3262.7). Total num frames: 946176. Throughput: 0: 831.7. Samples: 234970. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:50:19,210][03152] Avg episode reward: [(0, '4.583')]
+[2025-07-24 23:50:24,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.8, 300 sec: 3262.9). Total num frames: 962560. Throughput: 0: 814.9. Samples: 239654. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:24,210][03152] Avg episode reward: [(0, '4.688')]
+[2025-07-24 23:50:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3318.5). Total num frames: 978944. Throughput: 0: 834.2. Samples: 245122. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:29,207][03152] Avg episode reward: [(0, '4.729')]
+[2025-07-24 23:50:29,214][05117] Saving new best policy, reward=4.729!
+[2025-07-24 23:50:29,457][05130] Updated weights for policy 0, policy_version 240 (0.0013)
+[2025-07-24 23:50:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 995328. Throughput: 0: 810.9. Samples: 246852. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:34,207][03152] Avg episode reward: [(0, '4.592')]
+[2025-07-24 23:50:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 1015808. Throughput: 0: 823.7. Samples: 252374. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:50:39,209][03152] Avg episode reward: [(0, '4.673')]
+[2025-07-24 23:50:41,169][05130] Updated weights for policy 0, policy_version 250 (0.0012)
+[2025-07-24 23:50:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1028096. Throughput: 0: 814.0. Samples: 257234. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:50:44,210][03152] Avg episode reward: [(0, '4.729')]
+[2025-07-24 23:50:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 1048576. Throughput: 0: 807.0. Samples: 259668. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:50:49,210][03152] Avg episode reward: [(0, '4.858')]
+[2025-07-24 23:50:49,216][05117] Saving new best policy, reward=4.858!
+[2025-07-24 23:50:53,384][05130] Updated weights for policy 0, policy_version 260 (0.0015)
+[2025-07-24 23:50:54,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1064960. Throughput: 0: 832.2. Samples: 265252. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:50:54,207][03152] Avg episode reward: [(0, '4.815')]
+[2025-07-24 23:50:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 1081344. Throughput: 0: 809.8. Samples: 269796. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:50:59,210][03152] Avg episode reward: [(0, '4.665')]
+[2025-07-24 23:50:59,218][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000264_1081344.pth...
+[2025-07-24 23:50:59,299][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000068_278528.pth
+[2025-07-24 23:51:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1097728. Throughput: 0: 835.2. Samples: 272554. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:04,210][03152] Avg episode reward: [(0, '4.609')]
+[2025-07-24 23:51:05,630][05130] Updated weights for policy 0, policy_version 270 (0.0016)
+[2025-07-24 23:51:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1114112. Throughput: 0: 849.2. Samples: 277868. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:09,207][03152] Avg episode reward: [(0, '4.661')]
+[2025-07-24 23:51:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1130496. Throughput: 0: 831.9. Samples: 282558. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:14,210][03152] Avg episode reward: [(0, '4.782')]
+[2025-07-24 23:51:17,847][05130] Updated weights for policy 0, policy_version 280 (0.0013)
+[2025-07-24 23:51:19,206][03152] Fps is (10 sec: 3686.3, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 1150976. Throughput: 0: 855.4. Samples: 285346. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:19,211][03152] Avg episode reward: [(0, '4.839')]
+[2025-07-24 23:51:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1163264. Throughput: 0: 832.9. Samples: 289856. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:24,210][03152] Avg episode reward: [(0, '5.009')]
+[2025-07-24 23:51:24,214][05117] Saving new best policy, reward=5.009!
+[2025-07-24 23:51:29,205][03152] Fps is (10 sec: 3276.9, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 1183744. Throughput: 0: 848.2. Samples: 295402. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:29,209][03152] Avg episode reward: [(0, '4.775')]
+[2025-07-24 23:51:29,967][05130] Updated weights for policy 0, policy_version 290 (0.0013)
+[2025-07-24 23:51:34,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1200128. Throughput: 0: 855.8. Samples: 298180. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:34,207][03152] Avg episode reward: [(0, '4.807')]
+[2025-07-24 23:51:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 1216512. Throughput: 0: 829.7. Samples: 302590. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:39,209][03152] Avg episode reward: [(0, '4.817')]
+[2025-07-24 23:51:42,357][05130] Updated weights for policy 0, policy_version 300 (0.0014)
+[2025-07-24 23:51:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1232896. Throughput: 0: 851.6. Samples: 308120. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:44,213][03152] Avg episode reward: [(0, '5.094')]
+[2025-07-24 23:51:44,216][05117] Saving new best policy, reward=5.094!
+[2025-07-24 23:51:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1249280. Throughput: 0: 841.6. Samples: 310426. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:49,210][03152] Avg episode reward: [(0, '5.015')]
+[2025-07-24 23:51:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1265664. Throughput: 0: 833.3. Samples: 315366. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:51:54,211][03152] Avg episode reward: [(0, '5.104')]
+[2025-07-24 23:51:54,214][05117] Saving new best policy, reward=5.104!
+[2025-07-24 23:51:54,673][05130] Updated weights for policy 0, policy_version 310 (0.0013)
+[2025-07-24 23:51:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1282048. Throughput: 0: 845.5. Samples: 320604. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:51:59,207][03152] Avg episode reward: [(0, '4.874')]
+[2025-07-24 23:52:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1298432. Throughput: 0: 827.7. Samples: 322594. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:52:04,210][03152] Avg episode reward: [(0, '4.812')]
+[2025-07-24 23:52:06,907][05130] Updated weights for policy 0, policy_version 320 (0.0013)
+[2025-07-24 23:52:09,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 1318912. Throughput: 0: 847.4. Samples: 327988. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:09,210][03152] Avg episode reward: [(0, '4.802')]
+[2025-07-24 23:52:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1331200. Throughput: 0: 826.1. Samples: 332576. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:14,211][03152] Avg episode reward: [(0, '4.851')]
+[2025-07-24 23:52:19,187][05130] Updated weights for policy 0, policy_version 330 (0.0013)
+[2025-07-24 23:52:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 1351680. Throughput: 0: 826.2. Samples: 335360. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:52:19,209][03152] Avg episode reward: [(0, '4.766')]
+[2025-07-24 23:52:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1368064. Throughput: 0: 848.5. Samples: 340772. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:52:24,207][03152] Avg episode reward: [(0, '4.886')]
+[2025-07-24 23:52:29,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1380352. Throughput: 0: 805.9. Samples: 344386. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:29,208][03152] Avg episode reward: [(0, '4.865')]
+[2025-07-24 23:52:32,487][05130] Updated weights for policy 0, policy_version 340 (0.0012)
+[2025-07-24 23:52:34,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1396736. Throughput: 0: 815.4. Samples: 347118. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:34,207][03152] Avg episode reward: [(0, '5.010')]
+[2025-07-24 23:52:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1413120. Throughput: 0: 816.2. Samples: 352096. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:39,207][03152] Avg episode reward: [(0, '5.016')]
+[2025-07-24 23:52:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1429504. Throughput: 0: 811.4. Samples: 357118. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:44,209][03152] Avg episode reward: [(0, '5.056')]
+[2025-07-24 23:52:44,698][05130] Updated weights for policy 0, policy_version 350 (0.0012)
+[2025-07-24 23:52:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1445888. Throughput: 0: 828.4. Samples: 359872. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:49,207][03152] Avg episode reward: [(0, '5.103')]
+[2025-07-24 23:52:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1462272. Throughput: 0: 809.5. Samples: 364416. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:54,206][03152] Avg episode reward: [(0, '5.297')]
+[2025-07-24 23:52:54,208][05117] Saving new best policy, reward=5.297!
+[2025-07-24 23:52:56,937][05130] Updated weights for policy 0, policy_version 360 (0.0013)
+[2025-07-24 23:52:59,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 1482752. Throughput: 0: 829.8. Samples: 369918. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:52:59,207][03152] Avg episode reward: [(0, '5.328')]
+[2025-07-24 23:52:59,212][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000362_1482752.pth...
+[2025-07-24 23:52:59,297][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000167_684032.pth
+[2025-07-24 23:52:59,305][05117] Saving new best policy, reward=5.328!
+[2025-07-24 23:53:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1495040. Throughput: 0: 828.8. Samples: 372654. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:53:04,210][03152] Avg episode reward: [(0, '5.613')]
+[2025-07-24 23:53:04,214][05117] Saving new best policy, reward=5.613!
+[2025-07-24 23:53:09,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3208.5, 300 sec: 3332.3). Total num frames: 1511424. Throughput: 0: 804.6. Samples: 376980. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:53:09,213][03152] Avg episode reward: [(0, '5.907')]
+[2025-07-24 23:53:09,220][05117] Saving new best policy, reward=5.907!
+[2025-07-24 23:53:09,381][05130] Updated weights for policy 0, policy_version 370 (0.0013)
+[2025-07-24 23:53:14,206][03152] Fps is (10 sec: 3686.3, 60 sec: 3345.0, 300 sec: 3346.2). Total num frames: 1531904. Throughput: 0: 848.3. Samples: 382562. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:14,212][03152] Avg episode reward: [(0, '6.001')]
+[2025-07-24 23:53:14,214][05117] Saving new best policy, reward=6.001!
+[2025-07-24 23:53:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3208.5, 300 sec: 3332.3). Total num frames: 1544192. Throughput: 0: 830.9. Samples: 384510. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:53:19,207][03152] Avg episode reward: [(0, '5.850')]
+[2025-07-24 23:53:21,515][05130] Updated weights for policy 0, policy_version 380 (0.0012)
+[2025-07-24 23:53:24,205][03152] Fps is (10 sec: 3276.9, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1564672. Throughput: 0: 838.9. Samples: 389848. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:53:24,207][03152] Avg episode reward: [(0, '5.807')]
+[2025-07-24 23:53:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1581056. Throughput: 0: 840.4. Samples: 394936. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:29,207][03152] Avg episode reward: [(0, '5.936')]
+[2025-07-24 23:53:33,702][05130] Updated weights for policy 0, policy_version 390 (0.0012)
+[2025-07-24 23:53:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1597440. Throughput: 0: 830.0. Samples: 397224. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:34,210][03152] Avg episode reward: [(0, '5.864')]
+[2025-07-24 23:53:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1617920. Throughput: 0: 850.0. Samples: 402668. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:39,210][03152] Avg episode reward: [(0, '5.746')]
+[2025-07-24 23:53:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1630208. Throughput: 0: 830.1. Samples: 407272. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:44,209][03152] Avg episode reward: [(0, '5.872')]
+[2025-07-24 23:53:45,773][05130] Updated weights for policy 0, policy_version 400 (0.0013)
+[2025-07-24 23:53:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1650688. Throughput: 0: 831.2. Samples: 410056. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:49,209][03152] Avg episode reward: [(0, '6.129')]
+[2025-07-24 23:53:49,215][05117] Saving new best policy, reward=6.129!
+[2025-07-24 23:53:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1662976. Throughput: 0: 858.9. Samples: 415632. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:53:54,207][03152] Avg episode reward: [(0, '5.986')]
+[2025-07-24 23:53:57,899][05130] Updated weights for policy 0, policy_version 410 (0.0012)
+[2025-07-24 23:53:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1683456. Throughput: 0: 836.7. Samples: 420214. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:53:59,210][03152] Avg episode reward: [(0, '6.189')]
+[2025-07-24 23:53:59,218][05117] Saving new best policy, reward=6.189!
+[2025-07-24 23:54:04,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1699840. Throughput: 0: 855.4. Samples: 423004. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:54:04,209][03152] Avg episode reward: [(0, '6.377')]
+[2025-07-24 23:54:04,213][05117] Saving new best policy, reward=6.377!
+[2025-07-24 23:54:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1716224. Throughput: 0: 839.9. Samples: 427642. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:54:09,209][03152] Avg episode reward: [(0, '6.261')]
+[2025-07-24 23:54:10,081][05130] Updated weights for policy 0, policy_version 420 (0.0013)
+[2025-07-24 23:54:14,206][03152] Fps is (10 sec: 3276.7, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1732608. Throughput: 0: 847.8. Samples: 433088. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:54:14,210][03152] Avg episode reward: [(0, '6.878')]
+[2025-07-24 23:54:14,215][05117] Saving new best policy, reward=6.878!
+[2025-07-24 23:54:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3332.3). Total num frames: 1748992. Throughput: 0: 857.4. Samples: 435806. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:19,207][03152] Avg episode reward: [(0, '7.049')]
+[2025-07-24 23:54:19,214][05117] Saving new best policy, reward=7.049!
+[2025-07-24 23:54:22,356][05130] Updated weights for policy 0, policy_version 430 (0.0015)
+[2025-07-24 23:54:24,205][03152] Fps is (10 sec: 3276.9, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1765376. Throughput: 0: 836.5. Samples: 440310. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:24,209][03152] Avg episode reward: [(0, '7.832')]
+[2025-07-24 23:54:24,212][05117] Saving new best policy, reward=7.832!
+[2025-07-24 23:54:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 1785856. Throughput: 0: 856.4. Samples: 445808. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:29,209][03152] Avg episode reward: [(0, '8.098')]
+[2025-07-24 23:54:29,216][05117] Saving new best policy, reward=8.098!
+[2025-07-24 23:54:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1798144. Throughput: 0: 848.0. Samples: 448214. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:34,209][03152] Avg episode reward: [(0, '8.445')]
+[2025-07-24 23:54:34,210][05117] Saving new best policy, reward=8.445!
+[2025-07-24 23:54:34,627][05130] Updated weights for policy 0, policy_version 440 (0.0012)
+[2025-07-24 23:54:39,206][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1818624. Throughput: 0: 831.4. Samples: 453046. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:39,207][03152] Avg episode reward: [(0, '8.784')]
+[2025-07-24 23:54:39,217][05117] Saving new best policy, reward=8.784!
+[2025-07-24 23:54:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3318.5). Total num frames: 1830912. Throughput: 0: 827.5. Samples: 457452. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:44,207][03152] Avg episode reward: [(0, '8.297')]
+[2025-07-24 23:54:47,887][05130] Updated weights for policy 0, policy_version 450 (0.0013)
+[2025-07-24 23:54:49,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1847296. Throughput: 0: 806.9. Samples: 459314. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:49,210][03152] Avg episode reward: [(0, '8.238')]
+[2025-07-24 23:54:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3318.5). Total num frames: 1863680. Throughput: 0: 829.2. Samples: 464954. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:54,207][03152] Avg episode reward: [(0, '8.066')]
+[2025-07-24 23:54:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3318.5). Total num frames: 1880064. Throughput: 0: 810.4. Samples: 469558. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:54:59,210][03152] Avg episode reward: [(0, '8.991')]
+[2025-07-24 23:54:59,218][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000459_1880064.pth...
+[2025-07-24 23:54:59,290][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000264_1081344.pth
+[2025-07-24 23:54:59,298][05117] Saving new best policy, reward=8.991!
+[2025-07-24 23:54:59,979][05130] Updated weights for policy 0, policy_version 460 (0.0013)
+[2025-07-24 23:55:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3318.5). Total num frames: 1896448. Throughput: 0: 809.6. Samples: 472240. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:55:04,207][03152] Avg episode reward: [(0, '9.685')]
+[2025-07-24 23:55:04,210][05117] Saving new best policy, reward=9.685!
+[2025-07-24 23:55:09,210][03152] Fps is (10 sec: 3275.3, 60 sec: 3276.6, 300 sec: 3318.4). Total num frames: 1912832. Throughput: 0: 832.1. Samples: 477760. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:55:09,211][03152] Avg episode reward: [(0, '10.182')]
+[2025-07-24 23:55:09,235][05117] Saving new best policy, reward=10.182!
+[2025-07-24 23:55:12,189][05130] Updated weights for policy 0, policy_version 470 (0.0013)
+[2025-07-24 23:55:14,209][03152] Fps is (10 sec: 3275.6, 60 sec: 3276.6, 300 sec: 3332.3). Total num frames: 1929216. Throughput: 0: 811.4. Samples: 482326. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:55:14,215][03152] Avg episode reward: [(0, '9.866')]
+[2025-07-24 23:55:19,205][03152] Fps is (10 sec: 3688.1, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 1949696. Throughput: 0: 820.5. Samples: 485138. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:19,210][03152] Avg episode reward: [(0, '9.363')]
+[2025-07-24 23:55:24,205][03152] Fps is (10 sec: 3278.0, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 1961984. Throughput: 0: 826.5. Samples: 490240. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:24,216][03152] Avg episode reward: [(0, '9.038')]
+[2025-07-24 23:55:24,287][05130] Updated weights for policy 0, policy_version 480 (0.0016)
+[2025-07-24 23:55:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 1982464. Throughput: 0: 842.3. Samples: 495356. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:29,210][03152] Avg episode reward: [(0, '8.712')]
+[2025-07-24 23:55:34,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 1998848. Throughput: 0: 863.2. Samples: 498160. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:34,207][03152] Avg episode reward: [(0, '9.737')]
+[2025-07-24 23:55:36,204][05130] Updated weights for policy 0, policy_version 490 (0.0013)
+[2025-07-24 23:55:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 2015232. Throughput: 0: 839.7. Samples: 502740. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:39,210][03152] Avg episode reward: [(0, '10.351')]
+[2025-07-24 23:55:39,218][05117] Saving new best policy, reward=10.351!
+[2025-07-24 23:55:44,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2035712. Throughput: 0: 861.7. Samples: 508336. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:44,210][03152] Avg episode reward: [(0, '11.130')]
+[2025-07-24 23:55:44,215][05117] Saving new best policy, reward=11.130!
+[2025-07-24 23:55:47,773][05130] Updated weights for policy 0, policy_version 500 (0.0014)
+[2025-07-24 23:55:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 2048000. Throughput: 0: 863.4. Samples: 511094. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:49,210][03152] Avg episode reward: [(0, '11.437')]
+[2025-07-24 23:55:49,217][05117] Saving new best policy, reward=11.437!
+[2025-07-24 23:55:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2068480. Throughput: 0: 842.3. Samples: 515660. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:54,210][03152] Avg episode reward: [(0, '11.482')]
+[2025-07-24 23:55:54,216][05117] Saving new best policy, reward=11.482!
+[2025-07-24 23:55:59,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2084864. Throughput: 0: 865.4. Samples: 521264. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:55:59,207][03152] Avg episode reward: [(0, '11.016')]
+[2025-07-24 23:55:59,562][05130] Updated weights for policy 0, policy_version 510 (0.0012)
+[2025-07-24 23:56:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2101248. Throughput: 0: 846.7. Samples: 523240. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:04,210][03152] Avg episode reward: [(0, '11.329')]
+[2025-07-24 23:56:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.6, 300 sec: 3346.2). Total num frames: 2117632. Throughput: 0: 851.5. Samples: 528556. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:09,210][03152] Avg episode reward: [(0, '11.141')]
+[2025-07-24 23:56:11,531][05130] Updated weights for policy 0, policy_version 520 (0.0013)
+[2025-07-24 23:56:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.5, 300 sec: 3332.3). Total num frames: 2134016. Throughput: 0: 849.6. Samples: 533590. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:14,207][03152] Avg episode reward: [(0, '10.308')]
+[2025-07-24 23:56:19,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 2154496. Throughput: 0: 839.2. Samples: 535922. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:19,212][03152] Avg episode reward: [(0, '9.971')]
+[2025-07-24 23:56:23,554][05130] Updated weights for policy 0, policy_version 530 (0.0012)
+[2025-07-24 23:56:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3346.2). Total num frames: 2170880. Throughput: 0: 863.2. Samples: 541584. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:24,210][03152] Avg episode reward: [(0, '10.494')]
+[2025-07-24 23:56:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2187264. Throughput: 0: 840.9. Samples: 546176. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:29,211][03152] Avg episode reward: [(0, '11.767')]
+[2025-07-24 23:56:29,219][05117] Saving new best policy, reward=11.767!
+[2025-07-24 23:56:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2203648. Throughput: 0: 841.2. Samples: 548948. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:56:34,209][03152] Avg episode reward: [(0, '12.959')]
+[2025-07-24 23:56:34,213][05117] Saving new best policy, reward=12.959!
+[2025-07-24 23:56:35,639][05130] Updated weights for policy 0, policy_version 540 (0.0013)
+[2025-07-24 23:56:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2220032. Throughput: 0: 862.5. Samples: 554472. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:56:39,207][03152] Avg episode reward: [(0, '14.048')]
+[2025-07-24 23:56:39,215][05117] Saving new best policy, reward=14.048!
+[2025-07-24 23:56:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2236416. Throughput: 0: 838.6. Samples: 559000. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:56:44,210][03152] Avg episode reward: [(0, '14.558')]
+[2025-07-24 23:56:44,215][05117] Saving new best policy, reward=14.558!
+[2025-07-24 23:56:47,866][05130] Updated weights for policy 0, policy_version 550 (0.0013)
+[2025-07-24 23:56:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3360.1). Total num frames: 2256896. Throughput: 0: 855.6. Samples: 561740. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:56:49,210][03152] Avg episode reward: [(0, '14.067')]
+[2025-07-24 23:56:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2269184. Throughput: 0: 839.7. Samples: 566342. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:56:54,207][03152] Avg episode reward: [(0, '13.942')]
+[2025-07-24 23:56:59,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2285568. Throughput: 0: 828.5. Samples: 570874. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:56:59,217][03152] Avg episode reward: [(0, '13.184')]
+[2025-07-24 23:56:59,228][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000558_2285568.pth...
+[2025-07-24 23:56:59,328][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000362_1482752.pth
+[2025-07-24 23:57:01,110][05130] Updated weights for policy 0, policy_version 560 (0.0016)
+[2025-07-24 23:57:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 2301952. Throughput: 0: 837.8. Samples: 573624. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:04,207][03152] Avg episode reward: [(0, '14.376')]
+[2025-07-24 23:57:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2318336. Throughput: 0: 811.7. Samples: 578112. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:09,207][03152] Avg episode reward: [(0, '14.923')]
+[2025-07-24 23:57:09,214][05117] Saving new best policy, reward=14.923!
+[2025-07-24 23:57:13,302][05130] Updated weights for policy 0, policy_version 570 (0.0013)
+[2025-07-24 23:57:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3332.3). Total num frames: 2334720. Throughput: 0: 833.8. Samples: 583696. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:14,217][03152] Avg episode reward: [(0, '14.191')]
+[2025-07-24 23:57:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3332.3). Total num frames: 2351104. Throughput: 0: 828.0. Samples: 586208. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:19,211][03152] Avg episode reward: [(0, '14.340')]
+[2025-07-24 23:57:24,206][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 2367488. Throughput: 0: 812.4. Samples: 591028. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:24,212][03152] Avg episode reward: [(0, '13.816')]
+[2025-07-24 23:57:25,458][05130] Updated weights for policy 0, policy_version 580 (0.0013)
+[2025-07-24 23:57:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2387968. Throughput: 0: 835.2. Samples: 596586. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:29,207][03152] Avg episode reward: [(0, '14.132')]
+[2025-07-24 23:57:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 2400256. Throughput: 0: 814.2. Samples: 598378. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:34,211][03152] Avg episode reward: [(0, '14.790')]
+[2025-07-24 23:57:37,469][05130] Updated weights for policy 0, policy_version 590 (0.0013)
+[2025-07-24 23:57:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2420736. Throughput: 0: 836.5. Samples: 603984. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:39,211][03152] Avg episode reward: [(0, '15.893')]
+[2025-07-24 23:57:39,219][05117] Saving new best policy, reward=15.893!
+[2025-07-24 23:57:44,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2437120. Throughput: 0: 840.6. Samples: 608702. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:44,210][03152] Avg episode reward: [(0, '15.955')]
+[2025-07-24 23:57:44,231][05117] Saving new best policy, reward=15.955!
+[2025-07-24 23:57:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 2453504. Throughput: 0: 838.4. Samples: 611352. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:49,211][03152] Avg episode reward: [(0, '15.555')]
+[2025-07-24 23:57:49,544][05130] Updated weights for policy 0, policy_version 600 (0.0013)
+[2025-07-24 23:57:54,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 2473984. Throughput: 0: 864.0. Samples: 616994. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:57:54,207][03152] Avg episode reward: [(0, '14.870')]
+[2025-07-24 23:57:59,208][03152] Fps is (10 sec: 3275.9, 60 sec: 3344.9, 300 sec: 3360.1). Total num frames: 2486272. Throughput: 0: 842.4. Samples: 621606. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:57:59,216][03152] Avg episode reward: [(0, '15.730')]
+[2025-07-24 23:58:01,530][05130] Updated weights for policy 0, policy_version 610 (0.0013)
+[2025-07-24 23:58:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 2506752. Throughput: 0: 849.6. Samples: 624440. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:58:04,210][03152] Avg episode reward: [(0, '15.653')]
+[2025-07-24 23:58:09,205][03152] Fps is (10 sec: 3277.7, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2519040. Throughput: 0: 857.0. Samples: 629594. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:58:09,208][03152] Avg episode reward: [(0, '15.989')]
+[2025-07-24 23:58:09,217][05117] Saving new best policy, reward=15.989!
+[2025-07-24 23:58:13,724][05130] Updated weights for policy 0, policy_version 620 (0.0013)
+[2025-07-24 23:58:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 2539520. Throughput: 0: 841.9. Samples: 634472. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:14,215][03152] Avg episode reward: [(0, '16.984')]
+[2025-07-24 23:58:14,221][05117] Saving new best policy, reward=16.984!
+[2025-07-24 23:58:19,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 2555904. Throughput: 0: 862.1. Samples: 637172. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:58:19,207][03152] Avg episode reward: [(0, '17.236')]
+[2025-07-24 23:58:19,215][05117] Saving new best policy, reward=17.236!
+[2025-07-24 23:58:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 2572288. Throughput: 0: 838.9. Samples: 641736. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:58:24,209][03152] Avg episode reward: [(0, '16.534')]
+[2025-07-24 23:58:25,959][05130] Updated weights for policy 0, policy_version 630 (0.0013)
+[2025-07-24 23:58:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2588672. Throughput: 0: 857.6. Samples: 647296. Policy #0 lag: (min: 0.0, avg: 0.0, max: 1.0)
+[2025-07-24 23:58:29,210][03152] Avg episode reward: [(0, '16.984')]
+[2025-07-24 23:58:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3346.2). Total num frames: 2605056. Throughput: 0: 862.3. Samples: 650154. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:34,207][03152] Avg episode reward: [(0, '17.439')]
+[2025-07-24 23:58:34,208][05117] Saving new best policy, reward=17.439!
+[2025-07-24 23:58:38,170][05130] Updated weights for policy 0, policy_version 640 (0.0013)
+[2025-07-24 23:58:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2621440. Throughput: 0: 833.6. Samples: 654506. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:39,207][03152] Avg episode reward: [(0, '17.113')]
+[2025-07-24 23:58:44,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 2641920. Throughput: 0: 858.1. Samples: 660216. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:44,207][03152] Avg episode reward: [(0, '16.585')]
+[2025-07-24 23:58:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 2658304. Throughput: 0: 842.9. Samples: 662370. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:49,207][03152] Avg episode reward: [(0, '16.096')]
+[2025-07-24 23:58:50,295][05130] Updated weights for policy 0, policy_version 650 (0.0013)
+[2025-07-24 23:58:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2674688. Throughput: 0: 843.4. Samples: 667546. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:54,212][03152] Avg episode reward: [(0, '15.754')]
+[2025-07-24 23:58:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.5, 300 sec: 3360.1). Total num frames: 2691072. Throughput: 0: 851.8. Samples: 672802. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:58:59,207][03152] Avg episode reward: [(0, '14.695')]
+[2025-07-24 23:58:59,215][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000657_2691072.pth...
+[2025-07-24 23:58:59,340][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000459_1880064.pth
+[2025-07-24 23:59:02,381][05130] Updated weights for policy 0, policy_version 660 (0.0013)
+[2025-07-24 23:59:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2707456. Throughput: 0: 838.0. Samples: 674880. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:04,210][03152] Avg episode reward: [(0, '15.278')]
+[2025-07-24 23:59:09,208][03152] Fps is (10 sec: 3276.0, 60 sec: 3413.2, 300 sec: 3360.1). Total num frames: 2723840. Throughput: 0: 859.9. Samples: 680432. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:09,210][03152] Avg episode reward: [(0, '16.364')]
+[2025-07-24 23:59:14,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3276.8, 300 sec: 3346.2). Total num frames: 2736128. Throughput: 0: 815.0. Samples: 683972. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:14,207][03152] Avg episode reward: [(0, '16.857')]
+[2025-07-24 23:59:15,666][05130] Updated weights for policy 0, policy_version 670 (0.0012)
+[2025-07-24 23:59:19,205][03152] Fps is (10 sec: 3277.6, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2756608. Throughput: 0: 812.1. Samples: 686700. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:19,211][03152] Avg episode reward: [(0, '17.672')]
+[2025-07-24 23:59:19,218][05117] Saving new best policy, reward=17.672!
+[2025-07-24 23:59:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2772992. Throughput: 0: 838.9. Samples: 692258. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:24,207][03152] Avg episode reward: [(0, '17.430')]
+[2025-07-24 23:59:27,841][05130] Updated weights for policy 0, policy_version 680 (0.0013)
+[2025-07-24 23:59:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2789376. Throughput: 0: 813.1. Samples: 696804. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:29,211][03152] Avg episode reward: [(0, '17.426')]
+[2025-07-24 23:59:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 2805760. Throughput: 0: 827.9. Samples: 699626. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:34,212][03152] Avg episode reward: [(0, '17.821')]
+[2025-07-24 23:59:34,217][05117] Saving new best policy, reward=17.821!
+[2025-07-24 23:59:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2822144. Throughput: 0: 826.0. Samples: 704714. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:39,211][03152] Avg episode reward: [(0, '18.663')]
+[2025-07-24 23:59:39,224][05117] Saving new best policy, reward=18.663!
+[2025-07-24 23:59:39,977][05130] Updated weights for policy 0, policy_version 690 (0.0015)
+[2025-07-24 23:59:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 2838528. Throughput: 0: 820.2. Samples: 709712. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:44,211][03152] Avg episode reward: [(0, '18.316')]
+[2025-07-24 23:59:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 2859008. Throughput: 0: 836.2. Samples: 712510. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:49,207][03152] Avg episode reward: [(0, '19.768')]
+[2025-07-24 23:59:49,215][05117] Saving new best policy, reward=19.768!
+[2025-07-24 23:59:52,066][05130] Updated weights for policy 0, policy_version 700 (0.0013)
+[2025-07-24 23:59:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 2871296. Throughput: 0: 813.7. Samples: 717046. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:54,211][03152] Avg episode reward: [(0, '19.930')]
+[2025-07-24 23:59:54,215][05117] Saving new best policy, reward=19.930!
+[2025-07-24 23:59:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 2891776. Throughput: 0: 858.6. Samples: 722608. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-24 23:59:59,207][03152] Avg episode reward: [(0, '20.502')]
+[2025-07-24 23:59:59,214][05117] Saving new best policy, reward=20.502!
+[2025-07-25 00:00:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.2). Total num frames: 2904064. Throughput: 0: 859.9. Samples: 725394. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:04,211][03152] Avg episode reward: [(0, '20.515')]
+[2025-07-25 00:00:04,223][05117] Saving new best policy, reward=20.515!
+[2025-07-25 00:00:04,239][05130] Updated weights for policy 0, policy_version 710 (0.0013)
+[2025-07-25 00:00:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.2, 300 sec: 3374.0). Total num frames: 2924544. Throughput: 0: 836.2. Samples: 729888. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:09,218][03152] Avg episode reward: [(0, '19.984')]
+[2025-07-25 00:00:14,211][03152] Fps is (10 sec: 3684.3, 60 sec: 3413.0, 300 sec: 3360.0). Total num frames: 2940928. Throughput: 0: 859.8. Samples: 735502. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:14,212][03152] Avg episode reward: [(0, '19.849')]
+[2025-07-25 00:00:16,164][05130] Updated weights for policy 0, policy_version 720 (0.0013)
+[2025-07-25 00:00:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 2957312. Throughput: 0: 840.6. Samples: 737454. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:19,211][03152] Avg episode reward: [(0, '19.646')]
+[2025-07-25 00:00:24,205][03152] Fps is (10 sec: 3688.5, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 2977792. Throughput: 0: 848.3. Samples: 742888. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:24,213][03152] Avg episode reward: [(0, '20.200')]
+[2025-07-25 00:00:27,847][05130] Updated weights for policy 0, policy_version 730 (0.0013)
+[2025-07-25 00:00:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 2990080. Throughput: 0: 848.4. Samples: 747888. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:29,207][03152] Avg episode reward: [(0, '20.165')]
+[2025-07-25 00:00:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3010560. Throughput: 0: 838.6. Samples: 750248. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:00:34,210][03152] Avg episode reward: [(0, '20.347')]
+[2025-07-25 00:00:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 3026944. Throughput: 0: 862.3. Samples: 755848. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:39,210][03152] Avg episode reward: [(0, '20.796')]
+[2025-07-25 00:00:39,222][05117] Saving new best policy, reward=20.796!
+[2025-07-25 00:00:39,646][05130] Updated weights for policy 0, policy_version 740 (0.0013)
+[2025-07-25 00:00:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3043328. Throughput: 0: 839.6. Samples: 760392. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:44,210][03152] Avg episode reward: [(0, '20.969')]
+[2025-07-25 00:00:44,214][05117] Saving new best policy, reward=20.969!
+[2025-07-25 00:00:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3059712. Throughput: 0: 839.1. Samples: 763152. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:49,210][03152] Avg episode reward: [(0, '20.855')]
+[2025-07-25 00:00:51,494][05130] Updated weights for policy 0, policy_version 750 (0.0013)
+[2025-07-25 00:00:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 3076096. Throughput: 0: 862.8. Samples: 768712. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:54,207][03152] Avg episode reward: [(0, '21.377')]
+[2025-07-25 00:00:54,208][05117] Saving new best policy, reward=21.377!
+[2025-07-25 00:00:59,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3096576. Throughput: 0: 842.1. Samples: 773392. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:00:59,212][03152] Avg episode reward: [(0, '19.171')]
+[2025-07-25 00:00:59,221][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000756_3096576.pth...
+[2025-07-25 00:00:59,293][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000558_2285568.pth
+[2025-07-25 00:01:03,641][05130] Updated weights for policy 0, policy_version 760 (0.0013)
+[2025-07-25 00:01:04,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3374.0). Total num frames: 3112960. Throughput: 0: 860.2. Samples: 776164. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:04,207][03152] Avg episode reward: [(0, '18.413')]
+[2025-07-25 00:01:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3129344. Throughput: 0: 839.9. Samples: 780682. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:09,216][03152] Avg episode reward: [(0, '18.352')]
+[2025-07-25 00:01:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.7, 300 sec: 3360.1). Total num frames: 3145728. Throughput: 0: 853.5. Samples: 786294. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:01:14,211][03152] Avg episode reward: [(0, '18.384')]
+[2025-07-25 00:01:15,725][05130] Updated weights for policy 0, policy_version 770 (0.0013)
+[2025-07-25 00:01:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 3162112. Throughput: 0: 863.4. Samples: 789102. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:19,207][03152] Avg episode reward: [(0, '18.993')]
+[2025-07-25 00:01:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3178496. Throughput: 0: 840.2. Samples: 793656. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:24,211][03152] Avg episode reward: [(0, '20.369')]
+[2025-07-25 00:01:27,836][05130] Updated weights for policy 0, policy_version 780 (0.0013)
+[2025-07-25 00:01:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3374.0). Total num frames: 3198976. Throughput: 0: 863.3. Samples: 799242. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:29,211][03152] Avg episode reward: [(0, '21.261')]
+[2025-07-25 00:01:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3211264. Throughput: 0: 853.2. Samples: 801548. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:34,207][03152] Avg episode reward: [(0, '21.679')]
+[2025-07-25 00:01:34,208][05117] Saving new best policy, reward=21.679!
+[2025-07-25 00:01:39,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3227648. Throughput: 0: 816.9. Samples: 805472. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:39,211][03152] Avg episode reward: [(0, '21.640')]
+[2025-07-25 00:01:41,104][05130] Updated weights for policy 0, policy_version 790 (0.0013)
+[2025-07-25 00:01:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3346.2). Total num frames: 3244032. Throughput: 0: 831.3. Samples: 810800. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:01:44,207][03152] Avg episode reward: [(0, '22.470')]
+[2025-07-25 00:01:44,208][05117] Saving new best policy, reward=22.470!
+[2025-07-25 00:01:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3260416. Throughput: 0: 813.7. Samples: 812780. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:01:49,207][03152] Avg episode reward: [(0, '21.596')]
+[2025-07-25 00:01:53,289][05130] Updated weights for policy 0, policy_version 800 (0.0013)
+[2025-07-25 00:01:54,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3276800. Throughput: 0: 837.2. Samples: 818356. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:01:54,207][03152] Avg episode reward: [(0, '20.744')]
+[2025-07-25 00:01:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 3293184. Throughput: 0: 815.2. Samples: 822976. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:01:59,207][03152] Avg episode reward: [(0, '21.434')]
+[2025-07-25 00:02:04,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 3309568. Throughput: 0: 814.7. Samples: 825762. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:04,211][03152] Avg episode reward: [(0, '20.544')]
+[2025-07-25 00:02:05,438][05130] Updated weights for policy 0, policy_version 810 (0.0013)
+[2025-07-25 00:02:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 3325952. Throughput: 0: 835.2. Samples: 831238. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:09,207][03152] Avg episode reward: [(0, '20.550')]
+[2025-07-25 00:02:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3360.1). Total num frames: 3342336. Throughput: 0: 813.4. Samples: 835846. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:14,209][03152] Avg episode reward: [(0, '20.772')]
+[2025-07-25 00:02:17,437][05130] Updated weights for policy 0, policy_version 820 (0.0013)
+[2025-07-25 00:02:19,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 3362816. Throughput: 0: 825.5. Samples: 838694. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:02:19,208][03152] Avg episode reward: [(0, '19.711')]
+[2025-07-25 00:02:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3360.1). Total num frames: 3379200. Throughput: 0: 847.5. Samples: 843608. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:24,207][03152] Avg episode reward: [(0, '19.683')]
+[2025-07-25 00:02:29,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3276.8, 300 sec: 3374.0). Total num frames: 3395584. Throughput: 0: 849.6. Samples: 849032. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:02:29,207][03152] Avg episode reward: [(0, '18.544')]
+[2025-07-25 00:02:29,366][05130] Updated weights for policy 0, policy_version 830 (0.0013)
+[2025-07-25 00:02:34,210][03152] Fps is (10 sec: 3684.8, 60 sec: 3413.1, 300 sec: 3373.9). Total num frames: 3416064. Throughput: 0: 869.1. Samples: 851892. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:34,220][03152] Avg episode reward: [(0, '17.472')]
+[2025-07-25 00:02:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3432448. Throughput: 0: 846.0. Samples: 856424. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:02:39,212][03152] Avg episode reward: [(0, '17.251')]
+[2025-07-25 00:02:41,337][05130] Updated weights for policy 0, policy_version 840 (0.0013)
+[2025-07-25 00:02:44,205][03152] Fps is (10 sec: 3278.3, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3448832. Throughput: 0: 870.0. Samples: 862124. Policy #0 lag: (min: 0.0, avg: 0.2, max: 1.0)
+[2025-07-25 00:02:44,211][03152] Avg episode reward: [(0, '17.528')]
+[2025-07-25 00:02:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3360.1). Total num frames: 3465216. Throughput: 0: 865.5. Samples: 864708. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:49,211][03152] Avg episode reward: [(0, '17.728')]
+[2025-07-25 00:02:53,191][05130] Updated weights for policy 0, policy_version 850 (0.0013)
+[2025-07-25 00:02:54,210][03152] Fps is (10 sec: 3275.3, 60 sec: 3413.1, 300 sec: 3374.0). Total num frames: 3481600. Throughput: 0: 852.4. Samples: 869598. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:54,221][03152] Avg episode reward: [(0, '18.544')]
+[2025-07-25 00:02:59,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3374.0). Total num frames: 3502080. Throughput: 0: 876.6. Samples: 875294. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:02:59,207][03152] Avg episode reward: [(0, '20.399')]
+[2025-07-25 00:02:59,216][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000855_3502080.pth...
+[2025-07-25 00:02:59,317][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000657_2691072.pth
+[2025-07-25 00:03:04,205][03152] Fps is (10 sec: 3688.1, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3518464. Throughput: 0: 852.1. Samples: 877040. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:04,211][03152] Avg episode reward: [(0, '20.500')]
+[2025-07-25 00:03:05,259][05130] Updated weights for policy 0, policy_version 860 (0.0012)
+[2025-07-25 00:03:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3481.6, 300 sec: 3374.0). Total num frames: 3534848. Throughput: 0: 866.9. Samples: 882618. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:09,210][03152] Avg episode reward: [(0, '20.118')]
+[2025-07-25 00:03:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3481.6, 300 sec: 3374.0). Total num frames: 3551232. Throughput: 0: 849.4. Samples: 887256. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:14,211][03152] Avg episode reward: [(0, '20.822')]
+[2025-07-25 00:03:17,256][05130] Updated weights for policy 0, policy_version 870 (0.0013)
+[2025-07-25 00:03:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3567616. Throughput: 0: 847.4. Samples: 890022. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:19,209][03152] Avg episode reward: [(0, '20.398')]
+[2025-07-25 00:03:24,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3588096. Throughput: 0: 873.5. Samples: 895732. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:24,207][03152] Avg episode reward: [(0, '19.347')]
+[2025-07-25 00:03:29,153][05130] Updated weights for policy 0, policy_version 880 (0.0013)
+[2025-07-25 00:03:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3604480. Throughput: 0: 849.0. Samples: 900328. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:29,211][03152] Avg episode reward: [(0, '18.509')]
+[2025-07-25 00:03:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.6, 300 sec: 3387.9). Total num frames: 3620864. Throughput: 0: 856.4. Samples: 903244. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:34,210][03152] Avg episode reward: [(0, '19.594')]
+[2025-07-25 00:03:39,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3637248. Throughput: 0: 862.8. Samples: 908418. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:39,211][03152] Avg episode reward: [(0, '19.810')]
+[2025-07-25 00:03:41,107][05130] Updated weights for policy 0, policy_version 890 (0.0012)
+[2025-07-25 00:03:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3374.0). Total num frames: 3653632. Throughput: 0: 849.7. Samples: 913530. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:44,212][03152] Avg episode reward: [(0, '21.363')]
+[2025-07-25 00:03:49,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3674112. Throughput: 0: 873.8. Samples: 916360. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:49,207][03152] Avg episode reward: [(0, '22.209')]
+[2025-07-25 00:03:54,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3345.3, 300 sec: 3360.1). Total num frames: 3682304. Throughput: 0: 841.6. Samples: 920488. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:54,211][03152] Avg episode reward: [(0, '22.462')]
+[2025-07-25 00:03:54,232][05130] Updated weights for policy 0, policy_version 900 (0.0013)
+[2025-07-25 00:03:59,205][03152] Fps is (10 sec: 2867.2, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 3702784. Throughput: 0: 849.1. Samples: 925466. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:03:59,213][03152] Avg episode reward: [(0, '22.583')]
+[2025-07-25 00:03:59,221][05117] Saving new best policy, reward=22.583!
+[2025-07-25 00:04:04,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 3719168. Throughput: 0: 848.8. Samples: 928216. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:04,207][03152] Avg episode reward: [(0, '21.091')]
+[2025-07-25 00:04:06,346][05130] Updated weights for policy 0, policy_version 910 (0.0012)
+[2025-07-25 00:04:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3387.9). Total num frames: 3735552. Throughput: 0: 822.4. Samples: 932740. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:09,211][03152] Avg episode reward: [(0, '20.270')]
+[2025-07-25 00:04:14,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3387.9). Total num frames: 3756032. Throughput: 0: 844.8. Samples: 938346. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:14,211][03152] Avg episode reward: [(0, '18.039')]
+[2025-07-25 00:04:18,147][05130] Updated weights for policy 0, policy_version 920 (0.0012)
+[2025-07-25 00:04:19,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 3768320. Throughput: 0: 842.1. Samples: 941140. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:19,211][03152] Avg episode reward: [(0, '18.280')]
+[2025-07-25 00:04:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3387.9). Total num frames: 3788800. Throughput: 0: 829.7. Samples: 945754. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:24,209][03152] Avg episode reward: [(0, '18.505')]
+[2025-07-25 00:04:29,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3345.1, 300 sec: 3387.9). Total num frames: 3805184. Throughput: 0: 841.6. Samples: 951400. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:29,207][03152] Avg episode reward: [(0, '18.514')]
+[2025-07-25 00:04:29,594][05130] Updated weights for policy 0, policy_version 930 (0.0013)
+[2025-07-25 00:04:34,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3387.9). Total num frames: 3821568. Throughput: 0: 821.6. Samples: 953330. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:34,210][03152] Avg episode reward: [(0, '19.493')]
+[2025-07-25 00:04:39,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3413.3, 300 sec: 3401.8). Total num frames: 3842048. Throughput: 0: 852.5. Samples: 958850. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:39,207][03152] Avg episode reward: [(0, '20.496')]
+[2025-07-25 00:04:41,252][05130] Updated weights for policy 0, policy_version 940 (0.0013)
+[2025-07-25 00:04:44,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3374.0). Total num frames: 3854336. Throughput: 0: 852.6. Samples: 963834. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:44,207][03152] Avg episode reward: [(0, '20.901')]
+[2025-07-25 00:04:49,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3345.1, 300 sec: 3401.8). Total num frames: 3874816. Throughput: 0: 847.2. Samples: 966338. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:49,212][03152] Avg episode reward: [(0, '20.659')]
+[2025-07-25 00:04:53,158][05130] Updated weights for policy 0, policy_version 950 (0.0014)
+[2025-07-25 00:04:54,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3891200. Throughput: 0: 872.4. Samples: 971998. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:54,207][03152] Avg episode reward: [(0, '21.775')]
+[2025-07-25 00:04:59,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3401.8). Total num frames: 3907584. Throughput: 0: 851.2. Samples: 976648. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:04:59,210][03152] Avg episode reward: [(0, '23.270')]
+[2025-07-25 00:04:59,224][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000954_3907584.pth...
+[2025-07-25 00:04:59,227][03152] No heartbeat for components: RolloutWorker_w0 (1174 seconds), RolloutWorker_w1 (1174 seconds), RolloutWorker_w2 (1174 seconds), RolloutWorker_w4 (1174 seconds), RolloutWorker_w6 (1174 seconds), RolloutWorker_w7 (1174 seconds)
+[2025-07-25 00:04:59,298][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000756_3096576.pth
+[2025-07-25 00:04:59,306][05117] Saving new best policy, reward=23.270!
+[2025-07-25 00:05:04,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3401.8). Total num frames: 3928064. Throughput: 0: 849.6. Samples: 979370. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:05:04,207][03152] Avg episode reward: [(0, '22.504')]
+[2025-07-25 00:05:05,224][05130] Updated weights for policy 0, policy_version 960 (0.0013)
+[2025-07-25 00:05:09,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3387.9). Total num frames: 3940352. Throughput: 0: 867.9. Samples: 984808. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:05:09,207][03152] Avg episode reward: [(0, '22.804')]
+[2025-07-25 00:05:14,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3401.8). Total num frames: 3960832. Throughput: 0: 849.5. Samples: 989628. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:05:14,211][03152] Avg episode reward: [(0, '22.766')]
+[2025-07-25 00:05:17,172][05130] Updated weights for policy 0, policy_version 970 (0.0012)
+[2025-07-25 00:05:19,205][03152] Fps is (10 sec: 3686.4, 60 sec: 3481.6, 300 sec: 3387.9). Total num frames: 3977216. Throughput: 0: 869.5. Samples: 992456. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:05:19,210][03152] Avg episode reward: [(0, '22.197')]
+[2025-07-25 00:05:24,205][03152] Fps is (10 sec: 3276.8, 60 sec: 3413.3, 300 sec: 3401.8). Total num frames: 3993600. Throughput: 0: 848.7. Samples: 997042. Policy #0 lag: (min: 0.0, avg: 0.1, max: 1.0)
+[2025-07-25 00:05:24,213][03152] Avg episode reward: [(0, '21.502')]
+[2025-07-25 00:05:27,000][05117] Stopping Batcher_0...
+[2025-07-25 00:05:27,001][03152] Component Batcher_0 stopped!
+[2025-07-25 00:05:27,003][03152] Component RolloutWorker_w0 process died already! Don't wait for it.
+[2025-07-25 00:05:27,001][05117] Loop batcher_evt_loop terminating...
+[2025-07-25 00:05:27,004][03152] Component RolloutWorker_w1 process died already! Don't wait for it.
+[2025-07-25 00:05:27,004][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 00:05:27,006][03152] Component RolloutWorker_w2 process died already! Don't wait for it.
+[2025-07-25 00:05:27,008][03152] Component RolloutWorker_w4 process died already! Don't wait for it.
+[2025-07-25 00:05:27,010][03152] Component RolloutWorker_w6 process died already! Don't wait for it.
+[2025-07-25 00:05:27,010][03152] Component RolloutWorker_w7 process died already! Don't wait for it.
+[2025-07-25 00:05:27,065][05130] Weights refcount: 2 0
+[2025-07-25 00:05:27,069][03152] Component InferenceWorker_p0-w0 stopped!
+[2025-07-25 00:05:27,072][05130] Stopping InferenceWorker_p0-w0...
+[2025-07-25 00:05:27,074][05130] Loop inference_proc0-0_evt_loop terminating...
+[2025-07-25 00:05:27,083][05117] Removing /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000855_3502080.pth
+[2025-07-25 00:05:27,091][05117] Saving /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 00:05:27,191][05117] Stopping LearnerWorker_p0...
+[2025-07-25 00:05:27,192][05117] Loop learner_proc0_evt_loop terminating...
+[2025-07-25 00:05:27,192][03152] Component LearnerWorker_p0 stopped!
+[2025-07-25 00:05:27,237][03152] Component RolloutWorker_w5 stopped!
+[2025-07-25 00:05:27,242][05136] Stopping RolloutWorker_w5...
+[2025-07-25 00:05:27,243][05136] Loop rollout_proc5_evt_loop terminating...
+[2025-07-25 00:05:27,251][03152] Component RolloutWorker_w3 stopped!
+[2025-07-25 00:05:27,256][03152] Waiting for process learner_proc0 to stop...
+[2025-07-25 00:05:27,261][05135] Stopping RolloutWorker_w3...
+[2025-07-25 00:05:27,264][05135] Loop rollout_proc3_evt_loop terminating...
+[2025-07-25 00:05:28,444][03152] Waiting for process inference_proc0-0 to join...
+[2025-07-25 00:05:28,445][03152] Waiting for process rollout_proc0 to join...
+[2025-07-25 00:05:28,446][03152] Waiting for process rollout_proc1 to join...
+[2025-07-25 00:05:28,450][03152] Waiting for process rollout_proc2 to join...
+[2025-07-25 00:05:28,451][03152] Waiting for process rollout_proc3 to join...
+[2025-07-25 00:05:28,928][03152] Waiting for process rollout_proc4 to join...
+[2025-07-25 00:05:28,930][03152] Waiting for process rollout_proc5 to join...
+[2025-07-25 00:05:28,932][03152] Waiting for process rollout_proc6 to join...
+[2025-07-25 00:05:28,935][03152] Waiting for process rollout_proc7 to join...
+[2025-07-25 00:05:28,935][03152] Batcher 0 profile tree view:
+batching: 20.0191, releasing_batches: 0.0279
+[2025-07-25 00:05:28,936][03152] InferenceWorker_p0-w0 profile tree view:
+wait_policy: 0.0072
+  wait_policy_total: 506.9992
+update_model: 10.3111
+  weight_update: 0.0015
+one_step: 0.0065
+  handle_policy_step: 641.0699
+    deserialize: 15.5610, stack: 4.1189, obs_to_device_normalize: 147.2377, forward: 339.5518, send_messages: 20.4916
+    prepare_outputs: 86.2452
+      to_cpu: 53.8874
+[2025-07-25 00:05:28,937][03152] Learner 0 profile tree view:
+misc: 0.0037, prepare_batch: 11.9146
+train: 63.4267
+  epoch_init: 0.0044, minibatch_init: 0.0085, losses_postprocess: 0.4788, kl_divergence: 0.5120, after_optimizer: 31.3695
+  calculate_losses: 20.9119
+    losses_init: 0.0035, forward_head: 1.1530, bptt_initial: 14.5982, tail: 0.7497, advantages_returns: 0.1902, losses: 2.5639
+    bptt: 1.4813
+      bptt_forward_core: 1.4210
+  update: 9.7255
+    clip: 0.9406
+[2025-07-25 00:05:28,938][03152] Loop Runner_EvtLoop terminating...
+[2025-07-25 00:05:28,938][03152] Runner profile tree view:
+main_loop: 1223.8400
+[2025-07-25 00:05:28,939][03152] Collected {0: 4005888}, FPS: 3273.2
+[2025-07-25 00:23:22,574][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 00:23:22,575][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 00:23:22,576][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 00:23:22,577][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 00:23:22,578][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 00:23:22,579][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 00:23:22,580][03152] Adding new argument 'max_num_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 00:23:22,581][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 00:23:22,583][03152] Adding new argument 'push_to_hub'=False that is not in the saved config file!
+[2025-07-25 00:23:22,584][03152] Adding new argument 'hf_repository'=None that is not in the saved config file!
+[2025-07-25 00:23:22,585][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 00:23:22,586][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 00:23:22,587][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 00:23:22,588][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 00:23:22,589][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 00:23:22,617][03152] Doom resolution: 160x120, resize resolution: (128, 72)
+[2025-07-25 00:23:22,620][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 00:23:22,622][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 00:23:22,635][03152] ConvEncoder: input_channels=3
+[2025-07-25 00:23:22,731][03152] Conv encoder output size: 512
+[2025-07-25 00:23:22,732][03152] Policy head output size: 512
+[2025-07-25 00:23:22,999][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 00:23:23,001][03152] Could not load from checkpoint, attempt 0
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 00:23:23,007][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 00:23:23,009][03152] Could not load from checkpoint, attempt 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 00:23:23,010][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 00:23:23,016][03152] Could not load from checkpoint, attempt 2
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:01:54,843][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:01:54,844][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:01:54,844][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:01:54,845][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:01:54,846][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:01:54,847][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:01:54,847][03152] Adding new argument 'max_num_frames'=100000 that is not in the saved config file!
+[2025-07-25 01:01:54,848][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:01:54,849][03152] Adding new argument 'push_to_hub'=True that is not in the saved config file!
+[2025-07-25 01:01:54,850][03152] Adding new argument 'hf_repository'='ThomasSimonini/rl_course_vizdoom_health_gathering_supreme' that is not in the saved config file!
+[2025-07-25 01:01:54,851][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:01:54,851][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:01:54,853][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:01:54,853][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:01:54,858][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:01:54,901][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:01:54,903][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:01:54,912][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:01:54,952][03152] Conv encoder output size: 512
+[2025-07-25 01:01:54,952][03152] Policy head output size: 512
+[2025-07-25 01:01:54,973][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:01:54,976][03152] Could not load from checkpoint, attempt 0
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:01:54,977][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:01:54,979][03152] Could not load from checkpoint, attempt 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:01:54,980][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:01:54,982][03152] Could not load from checkpoint, attempt 2
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:00,840][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:02:00,841][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:02:00,842][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:02:00,844][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:02:00,845][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:02:00,846][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:02:00,847][03152] Adding new argument 'max_num_frames'=100000 that is not in the saved config file!
+[2025-07-25 01:02:00,848][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:02:00,849][03152] Adding new argument 'push_to_hub'=True that is not in the saved config file!
+[2025-07-25 01:02:00,850][03152] Adding new argument 'hf_repository'='siddiskid/rl_course_vizdoom_health_gathering_supreme' that is not in the saved config file!
+[2025-07-25 01:02:00,851][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:02:00,852][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:02:00,853][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:02:00,854][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:02:00,857][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:02:00,883][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:02:00,884][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:02:00,893][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:02:00,927][03152] Conv encoder output size: 512
+[2025-07-25 01:02:00,928][03152] Policy head output size: 512
+[2025-07-25 01:02:00,948][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:00,949][03152] Could not load from checkpoint, attempt 0
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:00,951][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:00,952][03152] Could not load from checkpoint, attempt 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:00,954][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:00,955][03152] Could not load from checkpoint, attempt 2
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:07,544][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:02:07,546][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:02:07,547][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:02:07,548][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:02:07,548][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:02:07,549][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:02:07,550][03152] Adding new argument 'max_num_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:02:07,551][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:02:07,552][03152] Adding new argument 'push_to_hub'=False that is not in the saved config file!
+[2025-07-25 01:02:07,553][03152] Adding new argument 'hf_repository'=None that is not in the saved config file!
+[2025-07-25 01:02:07,554][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:02:07,555][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:02:07,556][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:02:07,556][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:02:07,557][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:02:07,590][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:02:07,592][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:02:07,601][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:02:07,634][03152] Conv encoder output size: 512
+[2025-07-25 01:02:07,635][03152] Policy head output size: 512
+[2025-07-25 01:02:07,654][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:07,657][03152] Could not load from checkpoint, attempt 0
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:07,659][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:07,661][03152] Could not load from checkpoint, attempt 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:07,662][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:02:07,664][03152] Could not load from checkpoint, attempt 2
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:02:49,546][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:02:49,548][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:02:49,549][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:02:49,549][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:02:49,550][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:02:49,551][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:02:49,552][03152] Adding new argument 'max_num_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:02:49,553][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:02:49,554][03152] Adding new argument 'push_to_hub'=False that is not in the saved config file!
+[2025-07-25 01:02:49,554][03152] Adding new argument 'hf_repository'=None that is not in the saved config file!
+[2025-07-25 01:02:49,555][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:02:49,558][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:02:49,559][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:02:49,559][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:02:49,560][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:02:49,603][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:02:49,605][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:02:49,619][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:02:49,674][03152] Conv encoder output size: 512
+[2025-07-25 01:02:49,676][03152] Policy head output size: 512
+[2025-07-25 01:02:50,720][03152] Num frames 100...
+[2025-07-25 01:02:50,894][03152] Num frames 200...
+[2025-07-25 01:02:51,071][03152] Num frames 300...
+[2025-07-25 01:02:51,255][03152] Num frames 400...
+[2025-07-25 01:02:51,436][03152] Num frames 500...
+[2025-07-25 01:02:51,605][03152] Num frames 600...
+[2025-07-25 01:02:51,733][03152] Num frames 700...
+[2025-07-25 01:02:51,862][03152] Num frames 800...
+[2025-07-25 01:02:51,992][03152] Num frames 900...
+[2025-07-25 01:02:52,121][03152] Num frames 1000...
+[2025-07-25 01:02:52,246][03152] Avg episode rewards: #0: 20.560, true rewards: #0: 10.560
+[2025-07-25 01:02:52,247][03152] Avg episode reward: 20.560, avg true_objective: 10.560
+[2025-07-25 01:02:52,320][03152] Num frames 1100...
+[2025-07-25 01:02:52,449][03152] Num frames 1200...
+[2025-07-25 01:02:52,577][03152] Num frames 1300...
+[2025-07-25 01:02:52,706][03152] Num frames 1400...
+[2025-07-25 01:02:52,834][03152] Num frames 1500...
+[2025-07-25 01:02:52,965][03152] Num frames 1600...
+[2025-07-25 01:02:53,094][03152] Avg episode rewards: #0: 15.285, true rewards: #0: 8.285
+[2025-07-25 01:02:53,095][03152] Avg episode reward: 15.285, avg true_objective: 8.285
+[2025-07-25 01:02:53,156][03152] Num frames 1700...
+[2025-07-25 01:02:53,286][03152] Num frames 1800...
+[2025-07-25 01:02:53,426][03152] Num frames 1900...
+[2025-07-25 01:02:53,553][03152] Num frames 2000...
+[2025-07-25 01:02:53,681][03152] Num frames 2100...
+[2025-07-25 01:02:53,813][03152] Num frames 2200...
+[2025-07-25 01:02:53,945][03152] Num frames 2300...
+[2025-07-25 01:02:54,077][03152] Num frames 2400...
+[2025-07-25 01:02:54,208][03152] Num frames 2500...
+[2025-07-25 01:02:54,344][03152] Num frames 2600...
+[2025-07-25 01:02:54,480][03152] Num frames 2700...
+[2025-07-25 01:02:54,594][03152] Avg episode rewards: #0: 19.150, true rewards: #0: 9.150
+[2025-07-25 01:02:54,595][03152] Avg episode reward: 19.150, avg true_objective: 9.150
+[2025-07-25 01:02:54,666][03152] Num frames 2800...
+[2025-07-25 01:02:54,796][03152] Num frames 2900...
+[2025-07-25 01:02:54,927][03152] Num frames 3000...
+[2025-07-25 01:02:55,055][03152] Num frames 3100...
+[2025-07-25 01:02:55,184][03152] Num frames 3200...
+[2025-07-25 01:02:55,313][03152] Num frames 3300...
+[2025-07-25 01:02:55,450][03152] Num frames 3400...
+[2025-07-25 01:02:55,575][03152] Num frames 3500...
+[2025-07-25 01:02:55,700][03152] Num frames 3600...
+[2025-07-25 01:02:55,834][03152] Num frames 3700...
+[2025-07-25 01:02:55,972][03152] Num frames 3800...
+[2025-07-25 01:02:56,103][03152] Num frames 3900...
+[2025-07-25 01:02:56,238][03152] Num frames 4000...
+[2025-07-25 01:02:56,372][03152] Num frames 4100...
+[2025-07-25 01:02:56,514][03152] Num frames 4200...
+[2025-07-25 01:02:56,644][03152] Num frames 4300...
+[2025-07-25 01:02:56,773][03152] Num frames 4400...
+[2025-07-25 01:02:56,905][03152] Num frames 4500...
+[2025-07-25 01:02:57,038][03152] Num frames 4600...
+[2025-07-25 01:02:57,179][03152] Avg episode rewards: #0: 24.912, true rewards: #0: 11.662
+[2025-07-25 01:02:57,180][03152] Avg episode reward: 24.912, avg true_objective: 11.662
+[2025-07-25 01:02:57,227][03152] Num frames 4700...
+[2025-07-25 01:02:57,355][03152] Num frames 4800...
+[2025-07-25 01:02:57,491][03152] Num frames 4900...
+[2025-07-25 01:02:57,619][03152] Num frames 5000...
+[2025-07-25 01:02:57,744][03152] Num frames 5100...
+[2025-07-25 01:02:57,874][03152] Num frames 5200...
+[2025-07-25 01:02:58,005][03152] Num frames 5300...
+[2025-07-25 01:02:58,140][03152] Num frames 5400...
+[2025-07-25 01:02:58,269][03152] Num frames 5500...
+[2025-07-25 01:02:58,399][03152] Num frames 5600...
+[2025-07-25 01:02:58,540][03152] Num frames 5700...
+[2025-07-25 01:02:58,668][03152] Num frames 5800...
+[2025-07-25 01:02:58,801][03152] Num frames 5900...
+[2025-07-25 01:02:58,940][03152] Num frames 6000...
+[2025-07-25 01:02:59,015][03152] Avg episode rewards: #0: 26.430, true rewards: #0: 12.030
+[2025-07-25 01:02:59,016][03152] Avg episode reward: 26.430, avg true_objective: 12.030
+[2025-07-25 01:02:59,127][03152] Num frames 6100...
+[2025-07-25 01:02:59,258][03152] Num frames 6200...
+[2025-07-25 01:02:59,387][03152] Num frames 6300...
+[2025-07-25 01:02:59,523][03152] Num frames 6400...
+[2025-07-25 01:02:59,664][03152] Num frames 6500...
+[2025-07-25 01:02:59,826][03152] Avg episode rewards: #0: 23.470, true rewards: #0: 10.970
+[2025-07-25 01:02:59,827][03152] Avg episode reward: 23.470, avg true_objective: 10.970
+[2025-07-25 01:02:59,852][03152] Num frames 6600...
+[2025-07-25 01:02:59,984][03152] Num frames 6700...
+[2025-07-25 01:03:00,114][03152] Num frames 6800...
+[2025-07-25 01:03:00,244][03152] Num frames 6900...
+[2025-07-25 01:03:00,375][03152] Num frames 7000...
+[2025-07-25 01:03:00,676][03152] Num frames 7100...
+[2025-07-25 01:03:00,831][03152] Num frames 7200...
+[2025-07-25 01:03:00,965][03152] Num frames 7300...
+[2025-07-25 01:03:01,096][03152] Num frames 7400...
+[2025-07-25 01:03:01,226][03152] Num frames 7500...
+[2025-07-25 01:03:01,289][03152] Avg episode rewards: #0: 23.431, true rewards: #0: 10.717
+[2025-07-25 01:03:01,292][03152] Avg episode reward: 23.431, avg true_objective: 10.717
+[2025-07-25 01:03:01,600][03152] Num frames 7600...
+[2025-07-25 01:03:01,791][03152] Num frames 7700...
+[2025-07-25 01:03:01,995][03152] Num frames 7800...
+[2025-07-25 01:03:02,181][03152] Num frames 7900...
+[2025-07-25 01:03:02,359][03152] Num frames 8000...
+[2025-07-25 01:03:02,529][03152] Num frames 8100...
+[2025-07-25 01:03:02,705][03152] Num frames 8200...
+[2025-07-25 01:03:02,874][03152] Num frames 8300...
+[2025-07-25 01:03:03,043][03152] Num frames 8400...
+[2025-07-25 01:03:03,210][03152] Avg episode rewards: #0: 22.953, true rewards: #0: 10.577
+[2025-07-25 01:03:03,211][03152] Avg episode reward: 22.953, avg true_objective: 10.577
+[2025-07-25 01:03:03,283][03152] Num frames 8500...
+[2025-07-25 01:03:03,457][03152] Num frames 8600...
+[2025-07-25 01:03:03,637][03152] Num frames 8700...
+[2025-07-25 01:03:03,826][03152] Num frames 8800...
+[2025-07-25 01:03:03,975][03152] Num frames 8900...
+[2025-07-25 01:03:04,104][03152] Num frames 9000...
+[2025-07-25 01:03:04,235][03152] Num frames 9100...
+[2025-07-25 01:03:04,365][03152] Num frames 9200...
+[2025-07-25 01:03:04,496][03152] Num frames 9300...
+[2025-07-25 01:03:04,625][03152] Num frames 9400...
+[2025-07-25 01:03:04,753][03152] Num frames 9500...
+[2025-07-25 01:03:04,892][03152] Num frames 9600...
+[2025-07-25 01:03:05,025][03152] Num frames 9700...
+[2025-07-25 01:03:05,153][03152] Num frames 9800...
+[2025-07-25 01:03:05,287][03152] Num frames 9900...
+[2025-07-25 01:03:05,413][03152] Num frames 10000...
+[2025-07-25 01:03:05,543][03152] Num frames 10100...
+[2025-07-25 01:03:05,668][03152] Num frames 10200...
+[2025-07-25 01:03:05,792][03152] Avg episode rewards: #0: 25.838, true rewards: #0: 11.393
+[2025-07-25 01:03:05,793][03152] Avg episode reward: 25.838, avg true_objective: 11.393
+[2025-07-25 01:03:05,864][03152] Num frames 10300...
+[2025-07-25 01:03:05,997][03152] Num frames 10400...
+[2025-07-25 01:03:06,124][03152] Num frames 10500...
+[2025-07-25 01:03:06,253][03152] Num frames 10600...
+[2025-07-25 01:03:06,386][03152] Num frames 10700...
+[2025-07-25 01:03:06,513][03152] Num frames 10800...
+[2025-07-25 01:03:06,641][03152] Num frames 10900...
+[2025-07-25 01:03:06,770][03152] Num frames 11000...
+[2025-07-25 01:03:06,911][03152] Num frames 11100...
+[2025-07-25 01:03:07,040][03152] Num frames 11200...
+[2025-07-25 01:03:07,200][03152] Avg episode rewards: #0: 25.478, true rewards: #0: 11.278
+[2025-07-25 01:03:07,201][03152] Avg episode reward: 25.478, avg true_objective: 11.278
+[2025-07-25 01:04:12,324][03152] Replay video saved to /content/train_dir/default_experiment/replay.mp4!
+[2025-07-25 01:04:28,434][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:04:28,435][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:04:28,436][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:04:28,437][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:04:28,438][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:04:28,438][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:04:28,439][03152] Adding new argument 'max_num_frames'=100000 that is not in the saved config file!
+[2025-07-25 01:04:28,440][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:04:28,441][03152] Adding new argument 'push_to_hub'=True that is not in the saved config file!
+[2025-07-25 01:04:28,442][03152] Adding new argument 'hf_repository'='siddiskid/rl_course_vizdoom_health_gathering_supreme' that is not in the saved config file!
+[2025-07-25 01:04:28,443][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:04:28,444][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:04:28,445][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:04:28,445][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:04:28,446][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:04:28,473][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:04:28,474][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:04:28,484][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:04:28,517][03152] Conv encoder output size: 512
+[2025-07-25 01:04:28,518][03152] Policy head output size: 512
+[2025-07-25 01:04:28,535][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:04:28,537][03152] Could not load from checkpoint, attempt 0
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:04:28,538][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:04:28,540][03152] Could not load from checkpoint, attempt 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:04:28,541][03152] Loading state from checkpoint /content/train_dir/default_experiment/checkpoint_p0/checkpoint_000000978_4005888.pth...
+[2025-07-25 01:04:28,543][03152] Could not load from checkpoint, attempt 2
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sample_factory/algo/learning/learner.py", line 281, in load_checkpoint
+    checkpoint_dict = torch.load(latest_checkpoint, map_location=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/serialization.py", line 1470, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL numpy.core.multiarray.scalar was not an allowed global by default. Please use `torch.serialization.add_safe_globals([scalar])` or the `torch.serialization.safe_globals([scalar])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+[2025-07-25 01:04:44,976][03152] Loading existing experiment configuration from /content/train_dir/default_experiment/config.json
+[2025-07-25 01:04:44,977][03152] Overriding arg 'num_workers' with value 1 passed from command line
+[2025-07-25 01:04:44,978][03152] Adding new argument 'no_render'=True that is not in the saved config file!
+[2025-07-25 01:04:44,979][03152] Adding new argument 'save_video'=True that is not in the saved config file!
+[2025-07-25 01:04:44,980][03152] Adding new argument 'video_frames'=1000000000.0 that is not in the saved config file!
+[2025-07-25 01:04:44,981][03152] Adding new argument 'video_name'=None that is not in the saved config file!
+[2025-07-25 01:04:44,981][03152] Adding new argument 'max_num_frames'=100000 that is not in the saved config file!
+[2025-07-25 01:04:44,982][03152] Adding new argument 'max_num_episodes'=10 that is not in the saved config file!
+[2025-07-25 01:04:44,984][03152] Adding new argument 'push_to_hub'=True that is not in the saved config file!
+[2025-07-25 01:04:44,985][03152] Adding new argument 'hf_repository'='siddiskid/rl_course_vizdoom_health_gathering_supreme' that is not in the saved config file!
+[2025-07-25 01:04:44,986][03152] Adding new argument 'policy_index'=0 that is not in the saved config file!
+[2025-07-25 01:04:44,986][03152] Adding new argument 'eval_deterministic'=False that is not in the saved config file!
+[2025-07-25 01:04:44,987][03152] Adding new argument 'train_script'=None that is not in the saved config file!
+[2025-07-25 01:04:44,988][03152] Adding new argument 'enjoy_script'=None that is not in the saved config file!
+[2025-07-25 01:04:44,989][03152] Using frameskip 1 and render_action_repeat=4 for evaluation
+[2025-07-25 01:04:45,012][03152] RunningMeanStd input shape: (3, 72, 128)
+[2025-07-25 01:04:45,014][03152] RunningMeanStd input shape: (1,)
+[2025-07-25 01:04:45,025][03152] ConvEncoder: input_channels=3
+[2025-07-25 01:04:45,058][03152] Conv encoder output size: 512
+[2025-07-25 01:04:45,059][03152] Policy head output size: 512
+[2025-07-25 01:04:45,505][03152] Num frames 100...
+[2025-07-25 01:04:45,637][03152] Num frames 200...
+[2025-07-25 01:04:45,779][03152] Num frames 300...
+[2025-07-25 01:04:45,908][03152] Num frames 400...
+[2025-07-25 01:04:46,039][03152] Num frames 500...
+[2025-07-25 01:04:46,169][03152] Num frames 600...
+[2025-07-25 01:04:46,298][03152] Num frames 700...
+[2025-07-25 01:04:46,430][03152] Num frames 800...
+[2025-07-25 01:04:46,556][03152] Num frames 900...
+[2025-07-25 01:04:46,684][03152] Num frames 1000...
+[2025-07-25 01:04:46,814][03152] Avg episode rewards: #0: 22.560, true rewards: #0: 10.560
+[2025-07-25 01:04:46,815][03152] Avg episode reward: 22.560, avg true_objective: 10.560
+[2025-07-25 01:04:46,873][03152] Num frames 1100...
+[2025-07-25 01:04:47,001][03152] Num frames 1200...
+[2025-07-25 01:04:47,135][03152] Num frames 1300...
+[2025-07-25 01:04:47,267][03152] Num frames 1400...
+[2025-07-25 01:04:47,396][03152] Num frames 1500...
+[2025-07-25 01:04:47,525][03152] Num frames 1600...
+[2025-07-25 01:04:47,702][03152] Avg episode rewards: #0: 16.980, true rewards: #0: 8.480
+[2025-07-25 01:04:47,703][03152] Avg episode reward: 16.980, avg true_objective: 8.480
+[2025-07-25 01:04:47,712][03152] Num frames 1700...
+[2025-07-25 01:04:47,855][03152] Num frames 1800...
+[2025-07-25 01:04:47,981][03152] Num frames 1900...
+[2025-07-25 01:04:48,112][03152] Num frames 2000...
+[2025-07-25 01:04:48,252][03152] Num frames 2100...
+[2025-07-25 01:04:48,384][03152] Num frames 2200...
+[2025-07-25 01:04:48,510][03152] Num frames 2300...
+[2025-07-25 01:04:48,639][03152] Num frames 2400...
+[2025-07-25 01:04:48,769][03152] Num frames 2500...
+[2025-07-25 01:04:48,910][03152] Num frames 2600...
+[2025-07-25 01:04:49,037][03152] Num frames 2700...
+[2025-07-25 01:04:49,166][03152] Num frames 2800...
+[2025-07-25 01:04:49,293][03152] Num frames 2900...
+[2025-07-25 01:04:49,422][03152] Num frames 3000...
+[2025-07-25 01:04:49,552][03152] Num frames 3100...
+[2025-07-25 01:04:49,682][03152] Num frames 3200...
+[2025-07-25 01:04:49,823][03152] Num frames 3300...
+[2025-07-25 01:04:49,917][03152] Avg episode rewards: #0: 24.067, true rewards: #0: 11.067
+[2025-07-25 01:04:49,918][03152] Avg episode reward: 24.067, avg true_objective: 11.067
+[2025-07-25 01:04:50,021][03152] Num frames 3400...
+[2025-07-25 01:04:50,149][03152] Num frames 3500...
+[2025-07-25 01:04:50,281][03152] Num frames 3600...
+[2025-07-25 01:04:50,408][03152] Num frames 3700...
+[2025-07-25 01:04:50,534][03152] Num frames 3800...
+[2025-07-25 01:04:50,658][03152] Num frames 3900...
+[2025-07-25 01:04:50,787][03152] Num frames 4000...
+[2025-07-25 01:04:50,930][03152] Num frames 4100...
+[2025-07-25 01:04:51,056][03152] Num frames 4200...
+[2025-07-25 01:04:51,171][03152] Avg episode rewards: #0: 22.370, true rewards: #0: 10.620
+[2025-07-25 01:04:51,172][03152] Avg episode reward: 22.370, avg true_objective: 10.620
+[2025-07-25 01:04:51,239][03152] Num frames 4300...
+[2025-07-25 01:04:51,370][03152] Num frames 4400...
+[2025-07-25 01:04:51,496][03152] Num frames 4500...
+[2025-07-25 01:04:51,636][03152] Num frames 4600...
+[2025-07-25 01:04:51,817][03152] Num frames 4700...
+[2025-07-25 01:04:52,013][03152] Num frames 4800...
+[2025-07-25 01:04:52,184][03152] Num frames 4900...
+[2025-07-25 01:04:52,256][03152] Avg episode rewards: #0: 20.614, true rewards: #0: 9.814
+[2025-07-25 01:04:52,257][03152] Avg episode reward: 20.614, avg true_objective: 9.814
+[2025-07-25 01:04:52,415][03152] Num frames 5000...
+[2025-07-25 01:04:52,580][03152] Num frames 5100...
+[2025-07-25 01:04:52,742][03152] Num frames 5200...
+[2025-07-25 01:04:52,910][03152] Num frames 5300...
+[2025-07-25 01:04:53,090][03152] Num frames 5400...
+[2025-07-25 01:04:53,270][03152] Num frames 5500...
+[2025-07-25 01:04:53,464][03152] Avg episode rewards: #0: 19.465, true rewards: #0: 9.298
+[2025-07-25 01:04:53,465][03152] Avg episode reward: 19.465, avg true_objective: 9.298
+[2025-07-25 01:04:53,507][03152] Num frames 5600...
+[2025-07-25 01:04:53,683][03152] Num frames 5700...
+[2025-07-25 01:04:53,853][03152] Num frames 5800...
+[2025-07-25 01:04:53,984][03152] Num frames 5900...
+[2025-07-25 01:04:54,123][03152] Num frames 6000...
+[2025-07-25 01:04:54,213][03152] Avg episode rewards: #0: 17.467, true rewards: #0: 8.610
+[2025-07-25 01:04:54,215][03152] Avg episode reward: 17.467, avg true_objective: 8.610
+[2025-07-25 01:04:54,311][03152] Num frames 6100...
+[2025-07-25 01:04:54,442][03152] Num frames 6200...
+[2025-07-25 01:04:54,567][03152] Num frames 6300...
+[2025-07-25 01:04:54,698][03152] Num frames 6400...
+[2025-07-25 01:04:54,829][03152] Num frames 6500...
+[2025-07-25 01:04:54,959][03152] Num frames 6600...
+[2025-07-25 01:04:55,084][03152] Num frames 6700...
+[2025-07-25 01:04:55,222][03152] Num frames 6800...
+[2025-07-25 01:04:55,346][03152] Num frames 6900...
+[2025-07-25 01:04:55,470][03152] Num frames 7000...
+[2025-07-25 01:04:55,594][03152] Num frames 7100...
+[2025-07-25 01:04:55,720][03152] Num frames 7200...
+[2025-07-25 01:04:55,849][03152] Num frames 7300...
+[2025-07-25 01:04:55,977][03152] Num frames 7400...
+[2025-07-25 01:04:56,104][03152] Num frames 7500...
+[2025-07-25 01:04:56,286][03152] Avg episode rewards: #0: 19.369, true rewards: #0: 9.494
+[2025-07-25 01:04:56,287][03152] Avg episode reward: 19.369, avg true_objective: 9.494
+[2025-07-25 01:04:56,297][03152] Num frames 7600...
+[2025-07-25 01:04:56,422][03152] Num frames 7700...
+[2025-07-25 01:04:56,546][03152] Num frames 7800...
+[2025-07-25 01:04:56,673][03152] Num frames 7900...
+[2025-07-25 01:04:56,801][03152] Num frames 8000...
+[2025-07-25 01:04:56,936][03152] Num frames 8100...
+[2025-07-25 01:04:57,063][03152] Num frames 8200...
+[2025-07-25 01:04:57,203][03152] Num frames 8300...
+[2025-07-25 01:04:57,335][03152] Num frames 8400...
+[2025-07-25 01:04:57,463][03152] Num frames 8500...
+[2025-07-25 01:04:57,591][03152] Num frames 8600...
+[2025-07-25 01:04:57,740][03152] Avg episode rewards: #0: 19.970, true rewards: #0: 9.637
+[2025-07-25 01:04:57,741][03152] Avg episode reward: 19.970, avg true_objective: 9.637
+[2025-07-25 01:04:57,781][03152] Num frames 8700...
+[2025-07-25 01:04:57,913][03152] Num frames 8800...
+[2025-07-25 01:04:58,043][03152] Num frames 8900...
+[2025-07-25 01:04:58,176][03152] Num frames 9000...
+[2025-07-25 01:04:58,325][03152] Num frames 9100...
+[2025-07-25 01:04:58,454][03152] Num frames 9200...
+[2025-07-25 01:04:58,581][03152] Num frames 9300...
+[2025-07-25 01:04:58,709][03152] Num frames 9400...
+[2025-07-25 01:04:58,841][03152] Num frames 9500...
+[2025-07-25 01:04:58,971][03152] Num frames 9600...
+[2025-07-25 01:04:59,150][03152] Avg episode rewards: #0: 19.997, true rewards: #0: 9.697
+[2025-07-25 01:04:59,151][03152] Avg episode reward: 19.997, avg true_objective: 9.697
+[2025-07-25 01:04:59,157][03152] Num frames 9700...
+[2025-07-25 01:05:53,914][03152] Replay video saved to /content/train_dir/default_experiment/replay.mp4!
